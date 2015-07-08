@@ -1,0 +1,2 @@
+# Octanis1-Mission-Base-Station
+Octanis communicates via two way Iridium, VHF and Bluetooth. All data received from the rover is sent to what we'll call "Mission Base Station". This is a service running on a cloud server accepting structured data via REST API. Since this interface is standardised and centralised, it can be used for various other purposes like monitoring displays, phone apps and web apps.
