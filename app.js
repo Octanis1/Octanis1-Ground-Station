@@ -13,7 +13,7 @@ var heartbeats = require('./routes/heartbeats');
 var app = express();
 
 //mongodb connection 
-mongoose.connect('mongodb://'+MONGODB_ADDON_USER+':'+MONGODB_ADDON_PASSWORD+'@'+MONGODB_ADDON_HOST+':'+MONGODB_ADDON_PORT+'/'+MONGODB_ADDON_DB); 
+mongoose.connect('mongodb://'+MONGODB_ADDON_USERNAME+':'+MONGODB_ADDON_PASSWORD+'@'+MONGODB_ADDON_HOST+':'+MONGODB_ADDON_PORT+'/'+MONGODB_ADDON_DB); 
 
 
 // view engine setup
