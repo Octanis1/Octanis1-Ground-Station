@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>octanis 1: rover pose</title>
+  
+  
+  
+  <style type='text/css'>
+    body {
+    overflow: hidden;
+}
+  </style>
+  
+
+
+
+<script type='text/javascript'>//<![CDATA[
+window.onload=function(){
+var camera, scene, renderer, spotlight, rover_body;
+var geometry, material, mesh;
+var rover_s1, rover_s2, rover_s3, rover_s4;
+
+init();
+
+//update the rovers pose
+rotate_strut(rover_s1, Math.PI/4);
+setInterval(function(){update_pose(0,0,Math.PI*Date.now()/40000);}, 40);
+
+function init() {
+	//cam position
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
+    camera.position.z = 100;
+	
+    //build scene with axes
+    scene = new THREE.Scene();
+    axes = buildAxes(1000);
+    scene.add(axes);
+    
+    //light
+    var ambient	= new THREE.AmbientLight( 0x777777);
+	scene.add( ambient );
+	spotLight	= new THREE.SpotLight( 0xffffff, 0.5);
+	spotLight.shadowCameraNear	= 0.01;		
+	spotLight.castShadow		= true;
+	spotLight.shadowDarkness	= 0.2;
+	scene.add( spotLight );	
+   	
+    //ground
+    var geometry	= new THREE.CubeGeometry( 1000, 2, 1000);
+	var material	= new THREE.MeshPhongMaterial({
+		ambient		: 0xffffff,
+		color		: 0x4679bd,
+		shininess	: 0, 
+		specular	: 0x888888,
+		shading		: THREE.SmoothShading
+    });
+    
+    var ground		= new THREE.Mesh( geometry, material );
+	ground.scale.multiplyScalar(3);
+	ground.position.set(0, -50, 0);
+	ground.castShadow	= false;
+	ground.receiveShadow = true;
+	scene.add( ground );
+    
+    //rover object
+    var rover = new THREE.Object3D();
+    
+    //rover body
+    geometry = new THREE.BoxGeometry(30, 15, 30);
+    material = new THREE.MeshPhongMaterial({
+        ambient		: 0x444444,
+		color		: 0xffc446,
+		shininess	: 300, 
+		specular	: 0x888888,
+		shading		: THREE.SmoothShading
+    });
+    rover_body = new THREE.Mesh(geometry, material);
+    rover_body.castShadow = true;
+    
+    //init rover struts and wheels
+  	rover_s1 = new_rover_strut(0,0,0);
+  	rover_s2 = new_rover_strut(0,0,0);
+  	rover_s3 = new_rover_strut(0,0,0);
+  	rover_s4 = new_rover_strut(0,0,0);
+    rover_s3.rotation.y = Math.PI;
+    rover_s4.rotation.y = Math.PI;
+    
+    //rotate to default
+    rotate_strut(rover_s1, Math.PI/4);
+    rotate_strut(rover_s2, -Math.PI/4);
+    rotate_strut(rover_s3, Math.PI/4);
+    rotate_strut(rover_s4, -Math.PI/4);
+    
+    //connect everything together
+    rover_body.add(rover_s1);
+    rover_body.add(rover_s2);
+    rover_body.add(rover_s3);
+    rover_body.add(rover_s4);
+    rover.add(rover_body);
+ 
+    
+    //update strut
+    scene.add(rover);
+
+    //setup renderer
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+	renderer.shadowMapEnabled = true;
+    renderer.shadowMapType = THREE.PCFSoftShadowMap;
+    
+    document.body.appendChild(renderer.domElement);
+
+}
+
+function new_rover_strut(posx,posy,posz){
+	//strut
+    var rover_s_holder = new THREE.Object3D();
+
+    var s_geometry = new THREE.BoxGeometry(3, 25, 2);
+    var s_material = new THREE.MeshPhongMaterial({
+        ambient		: 0x444444,
+		color		: 0xf4f4f4,
+		shininess	: 300, 
+		specular	: 0x888888,
+		shading		: THREE.SmoothShading
+    });
+    var rover_s = new THREE.Mesh(s_geometry, s_material);
+    rover_s.castShadow = true;
+    rover_s.position.set(0,-12,16);
+    rover_s_holder.position.set(posx,posy,posz);
+    
+    //wheel
+    var w_geometry = new THREE.CylinderGeometry( 7, 7, 5, 32);
+    var w_material = new THREE.MeshPhongMaterial( {color: 0xffc446} );
+    var rover_w = new THREE.Mesh(w_geometry, w_material);
+    rover_w.castShadow = true;
+	rover_w.rotation.x = Math.PI/2;
+    rover_w.position.set(0,-10,4);
+    
+    rover_s.add(rover_w);
+    rover_s_holder.add(rover_s);
+    
+    return rover_s_holder;
+}
+
+function rotate_strut(strut, angle){
+    strut.rotation.z = angle; 
+}
+
+function update_spotlight(){
+    var angle	=  -7*Math.PI;
+    spotLight.position.x = Math.cos(angle*-0.1)*200;
+    spotLight.position.y = 200+Math.sin(angle*0.5)*60;
+    spotLight.position.z = Math.sin(angle*-0.1)*200;		
+}
+
+function update_pose(posx,posy,posz) {
+	update_spotlight();
+    
+    rover_body.rotation.x = posx;
+    rover_body.rotation.z = posy;
+    rover_body.rotation.y = posz;
+    
+	renderer.render(scene, camera);
+}
+
+function buildAxes( length ) {
+        var axes = new THREE.Object3D();
+
+        axes.add( buildAxis( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( length, 0, 0 ), 0xFF0000, false ) ); // +X
+        axes.add( buildAxis( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( -length, 0, 0 ), 0xFF0000, true) ); // -X
+        axes.add( buildAxis( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, length, 0 ), 0x00FF00, false ) ); // +Y
+        axes.add( buildAxis( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, -length, 0 ), 0x00FF00, true ) ); // -Y
+        axes.add( buildAxis( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, 0, length ), 0x0000FF, false ) ); // +Z
+        axes.add( buildAxis( new THREE.Vector3( 0, 0, 0 ), new THREE.Vector3( 0, 0, -length ), 0x0000FF, true ) ); // -Z
+
+        return axes;
+
+}
+
+function buildAxis( src, dst, colorHex, dashed ) {
+        var geom = new THREE.Geometry(),
+            mat;
+
+        if(dashed) {
+                mat = new THREE.LineDashedMaterial({ linewidth: 3, color: colorHex, dashSize: 3, gapSize: 3 });
+        } else {
+                mat = new THREE.LineBasicMaterial({ linewidth: 3, color: colorHex });
+        }
+
+        geom.vertices.push( src.clone() );
+        geom.vertices.push( dst.clone() );
+        geom.computeLineDistances(); // This one is SUPER important, otherwise dashed lines will appear as simple plain lines
+
+        var axis = new THREE.Line( geom, mat, THREE.LinePieces );
+
+        return axis;
+
+}
+}//]]> 
+
+</script>
+
+</head>
+<body>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
+  
+</body>
+
+</html>
