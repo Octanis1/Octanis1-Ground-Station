@@ -40,4 +40,8 @@ You can also get a listing of all received packets at the same URL.
 
 
 
-
+## Working Principle
+1. Raw data comes in to the base station from various sources through HTTP requests.
+2. Raw data is stored in a collection per source. E.g. "rockblock_packets"
+3. Raw data is searched for protobuf identifiers and decoded accordingly. E.g "rover_status"
+4. The decoded raw data is then stored in higher level collections. E.g. raw data from any source can contribute to "rover_status" collection.
