@@ -10,6 +10,11 @@ var LorawanPacket = require('../models/lorawan_packet');
 /* POST */
 router.post('/', xmlParser({trim: false, explicitArray: false}), function(req, res) {
 
+  if(req.query.gateway_key != process.env.GATEWAY_KEY){
+    res.send('OK');
+    return false;
+  }
+
   var newLorawanPacket = LorawanPacket(req.body.deveui_uplink);
   newLorawanPacket.save(function(err){
     if(err) throw err;
@@ -19,12 +24,17 @@ router.post('/', xmlParser({trim: false, explicitArray: false}), function(req, r
 });
 
 
+/* GET */
 router.get('/', function(req, res, next) {
+  
+  if(req.query.gateway_key != process.env.GATEWAY_KEY){
+    res.send('OK');
+    return false;
+  }
 
   LorawanPacket.find({}, function(err, docs) {
     if (!err){ 
-        console.log(docs);
-        res.send(docs);
+        res.send(docs);        
     } else {throw err;}
   });
 
