@@ -12,6 +12,8 @@ router.post('/', xmlParser({trim: false, explicitArray: false}), function(req, r
 
   if(req.query.gateway_key != process.env.GATEWAY_KEY){
     res.send('OK');
+    console.log("LORAWAN_PACKET: FALSE AUTH!");
+    console.log(req);
     return false;
   }
 
