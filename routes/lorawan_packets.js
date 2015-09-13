@@ -2,6 +2,12 @@ var express = require('express');
 var router = express.Router();
 var xmlParser = require('express-xml-bodyparser');
 
+
+//protobuf
+var ProtoBuf = require("protobufjs");
+var RoverStatusBuilder = ProtoBuf.loadProtoFile("protobuf/rover_status.proto");
+var RoverStatus = RoverStatusBuilder.build("rover_status");
+
 //model
 var LorawanPacket = require('../models/lorawan_packet');
 
@@ -16,6 +22,10 @@ router.post('/'+process.env.GATEWAY_KEY, xmlParser({trim: false, explicitArray: 
   });
   
   res.send('OK');
+
+
+  var RoverStatusDecoded = RoverStatus.decode(req.body.deveui_uplink.payload_hex);
+  console.log(RoverStatusDecoded);
 });
 
 

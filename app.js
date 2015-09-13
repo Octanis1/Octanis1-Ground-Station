@@ -7,10 +7,12 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose'); 
 
 
+//routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var heartbeats = require('./routes/heartbeats');
-var lorawan_packets = require('./routes/lorawan_packets');
+var lorawan_packets = require('./routes/lorawan_packets')
+
 
 var app = express();
 app.set('port', process.env.PORT);
