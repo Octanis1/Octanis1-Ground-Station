@@ -22,16 +22,12 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res) {
   
   var newHeartbeat = Heartbeat(req.body);
-    console.log(newHeartbeat);
-
   
   newHeartbeat.save(function(err){
     if(err) throw err;
-    
-    console.log('User created!');
   });
     
-  res.send('User saved successfully!');
+  res.send('OK');
 
 });
 

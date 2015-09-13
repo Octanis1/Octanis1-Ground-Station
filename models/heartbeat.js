@@ -19,9 +19,9 @@ var heartbeatSchema = new Schema({
   strut3_pos: Number, 
   strut4_pos: Number, 
   iridium_lat: Number, 
-  iridium_lon: Number, 
+  iridium_lon: Number,
   iridium_accuracy: Number, 
-  timestamp: Date 
+  timestamp: Date
 });
 
 var Heartbeat = mongoose.model('Heartbeat', heartbeatSchema);  
