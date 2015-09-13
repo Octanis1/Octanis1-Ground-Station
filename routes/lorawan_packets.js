@@ -8,14 +8,7 @@ var LorawanPacket = require('../models/lorawan_packet');
 
 
 /* POST */
-router.post('/', xmlParser({trim: false, explicitArray: false}), function(req, res) {
-
-  if(req.query.gateway_key != process.env.GATEWAY_KEY){
-    res.send('OK');
-    console.log("LORAWAN_PACKET: FALSE AUTH!");
-    console.log(req);
-    return false;
-  }
+router.post('/'+process.env.GATEWAY_KEY, xmlParser({trim: false, explicitArray: false}), function(req, res) {
 
   var newLorawanPacket = LorawanPacket(req.body.deveui_uplink);
   newLorawanPacket.save(function(err){
