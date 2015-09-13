@@ -3,6 +3,8 @@ Octanis communicates via two way Iridium, VHF and Bluetooth. All data received f
 
 This base station currently accepts incoming LoRaWAN end-device packets from an Thingpark Actility LoRaWAN application server.
 
+__Warning:__ This software is currently for testing/dev purposes only.
+
 
 ## Requirements
 - MongoDB instance running somewhere.
