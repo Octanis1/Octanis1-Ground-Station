@@ -20,12 +20,7 @@ router.post('/'+process.env.GATEWAY_KEY, xmlParser({trim: false, explicitArray: 
 
 
 /* GET */
-router.get('/', function(req, res, next) {
-  
-  if(req.query.gateway_key != process.env.GATEWAY_KEY){
-    res.send('OK');
-    return false;
-  }
+router.get('/'+process.env.GATEWAY_KEY, function(req, res, next) {
 
   LorawanPacket.find({}, function(err, docs) {
     if (!err){ 
