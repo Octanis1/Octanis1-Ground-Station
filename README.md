@@ -11,31 +11,33 @@ __Warning:__ This software is currently for testing/dev purposes only.
 - nodejs / npm
 
 You must set these environment variables prior to running:
+
+**Unix / OSX**:
 ```
-**Unix / OSX**: 
 export MONGODB_ADDON_USER=yourmongouser
 export MONGODB_ADDON_PASSWORD=yourmongopassword
 export MONGODB_ADDON_HOST=yourmongohost
 export MONGODB_ADDON_PORT=27017
 export MONGODB_ADDON_DB=yourmongodb
 export GATEWAY_KEY=yoursecretkeyforapplicationserveraccess
-
+```
 **Windows**:
+```
 SET MONGODB_ADDON_USER=yourmongouser
 SET MONGODB_ADDON_PASSWORD=yourmongopassword
 SET MONGODB_ADDON_HOST=yourmongohost
 SET MONGODB_ADDON_PORT=27017
 SET MONGODB_ADDON_DB=yourmongodb
 SET GATEWAY_KEY=yoursecretkeyforapplicationserveraccess
-
-**Windows Powershell:**
+```
+**Windows Powershell**:
+```
 $env:MONGODB_ADDON_USER = "yourmongouser"
 $env:MONGODB_ADDON_PASSWORD = "yourmongopassword"
 $env:MONGODB_ADDON_HOST = "yourmongohost"
 $env:MONGODB_ADDON_PORT = 27017
 $env:MONGODB_ADDON_DB = "yourmongodb"
 $env:GATEWAY_KEY = "yoursecretkeyforapplicationserveraccess"
-
 ```
 
 
