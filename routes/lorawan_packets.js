@@ -5,6 +5,7 @@ var xmlParser = require('express-xml-bodyparser');
 
 //protobuf
 var ProtoBuf = require("protobufjs");
+var ByteBuffer = ProtoBuf.ByteBuffer;                   
 var RoverStatusBuilder = ProtoBuf.loadProtoFile("protobuf/rover_status.proto");
 var RoverStatus = RoverStatusBuilder.build("rover_status");
 
@@ -16,7 +17,16 @@ var LorawanPacket = require('../models/lorawan_packet');
 /* POST */
 router.post('/'+process.env.GATEWAY_KEY, xmlParser({trim: false, explicitArray: false}), function(req, res) {
 
-  var newLorawanPacket = LorawanPacket(req.body.deveui_uplink);
+  var hex = "08befdfaf5fbffffffff011500802e441dbebebebe20befdfaf5fbffffffff01280530befdfaf5fbffffffff01380540befdfaf5fbffffffff01";
+  var hexRev = hex.toString(16).replace(/^(.(..)*)$/, "0$1").match(/../g).reverse().join("");
+  
+  console.log(hex);
+  console.log(hexRev);
+  
+  //var test = RoverStatus.decode(hexRev);
+  
+  //console.log("\n --lorawan_packet.js => Decoded message:" + test + "\n");
+  var newLorawanPacket = LorawanPacket(req.body); //.deveui_uplink);
   newLorawanPacket.save(function(err){
     if(err) throw err;
   });
@@ -25,7 +35,7 @@ router.post('/'+process.env.GATEWAY_KEY, xmlParser({trim: false, explicitArray: 
 
 
   var RoverStatusDecoded = RoverStatus.decode(req.body.deveui_uplink.payload_hex);
-  console.log(RoverStatusDecoded);
+
 });
 
 
