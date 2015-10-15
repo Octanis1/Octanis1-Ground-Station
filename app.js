@@ -7,8 +7,6 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var cors = require('cors');
 
-//enable all cors requests
-app.use(cors());
 
 //routes
 var routes = require('./routes/index');
@@ -40,6 +38,9 @@ app.use(logger('dev'));
 app.use(cookieParser());
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
+//enable all cors requests
+app.use(cors());
 
 
 // catch 404 and forward to error handler

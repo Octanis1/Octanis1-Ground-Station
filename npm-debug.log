@@ -17,7 +17,7 @@
 9 verbose stack     at Process._handle.onexit (child_process.js:680:5)
 10 verbose pkgid Octanis1-Mission-Base-Station@0.0.0
 11 verbose cwd /Users/sam/Octanis/Octanis1-Mission-Base-Station
-12 error Darwin 14.3.0
+12 error Darwin 15.0.0
 13 error argv "node" "/usr/local/bin/npm" "start"
 14 error node v0.8.22
 15 error npm  v2.14.3
