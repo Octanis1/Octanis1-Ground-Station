@@ -34,9 +34,22 @@ router.get('/'+process.env.GATEWAY_KEY, function(req, res, next) {
 
   LorawanPacket.find({}, function(err, docs) {
     if (!err){ 
-        res.send(docs);        
+        //res.send(docs);    
+
+        var data = []; // List of Buffer objects
+        var raw = "08befdfaf5fbffffffff011500802e441dbebebebe20befdfaf5fbffffffff01280530befdfaf5fbffffffff01380540befdfaf5fbffffffff01";
+        data.push(raw);
+
+        data = Buffer.concat(data);
+
+        var RoverStatusDecoded = RoverStatus.decode(data);
+        res.send(RoverStatusDecoded);     
+    
     } else {throw err;}
   });
+
+
+
 
 });
 
