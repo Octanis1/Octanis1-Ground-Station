@@ -20,6 +20,6 @@
     "protobufjs":"*"
   },
   "engines" : {
-    "node" : "~4.2.1"
+    "node" : "~0.12.0"
   }
 }
