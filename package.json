@@ -18,5 +18,8 @@
     "mongoose": "*",
     "express-xml-bodyparser": "~0.2.2",
     "protobufjs":"*"
+  },
+  "engines" : {
+    "node" : "~4.0"
   }
 }
