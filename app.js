@@ -28,7 +28,6 @@ server.on('message', function (message, remote) {
 
 server.bind(PORT, HOST);
 
-/*
 
 //routes
 var routes = require('./routes/index');
@@ -96,6 +95,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-*/
 
 module.exports = app;
+
