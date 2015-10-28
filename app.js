@@ -8,6 +8,28 @@ var mongoose = require('mongoose');
 var cors = require('cors');
 
 
+//Accept UDP datagrams for LoRaWAN 
+
+var PORT = 1780;
+var HOST = '0.0.0.0';
+
+var dgram = require('dgram');
+var server = dgram.createSocket('udp4');
+
+server.on('listening', function () {
+    var address = server.address();
+    console.log('UDP Server listening on ' + address.address + ":" + address.port);
+});
+
+server.on('message', function (message, remote) {
+    console.log(remote.address + ':' + remote.port +' - ' + message);
+
+});
+
+server.bind(PORT, HOST);
+
+/*
+
 //routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -74,5 +96,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
+*/
 
 module.exports = app;
