@@ -3,10 +3,6 @@ var router = express.Router();
 var xmlParser = require('express-xml-bodyparser');
 
 
-//protobuf
-var RoverStatusBuilder = ProtoBuf.loadProtoFile("protobuf/rover_status.proto");
-var RoverStatus = RoverStatusBuilder.build("rover_status");
-
 //model
 var LorawanPacket = require('../models/lorawan_packet');
 
