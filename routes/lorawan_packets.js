@@ -22,9 +22,6 @@ router.post('/'+process.env.GATEWAY_KEY, xmlParser({trim: false, explicitArray: 
   
   res.send('OK');
 
-
-  var RoverStatusDecoded = RoverStatus.decode(req.body.deveui_uplink.payload_hex);
-  console.log(RoverStatusDecoded);
 });
 
 
