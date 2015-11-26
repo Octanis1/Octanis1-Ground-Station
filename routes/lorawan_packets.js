@@ -4,7 +4,6 @@ var xmlParser = require('express-xml-bodyparser');
 
 
 //protobuf
-var ProtoBuf = require("protobufjs");
 var RoverStatusBuilder = ProtoBuf.loadProtoFile("protobuf/rover_status.proto");
 var RoverStatus = RoverStatusBuilder.build("rover_status");
 
@@ -36,14 +35,7 @@ router.get('/'+process.env.GATEWAY_KEY, function(req, res, next) {
     if (!err){ 
         //res.send(docs);    
 
-        var data = []; // List of Buffer objects
-        var raw = "08befdfaf5fbffffffff011500802e441dbebebebe20befdfaf5fbffffffff01280530befdfaf5fbffffffff01380540befdfaf5fbffffffff01";
-        data.push(raw);
-
-        data = Buffer.concat(data);
-
-        var RoverStatusDecoded = RoverStatus.decode(data);
-        res.send(RoverStatusDecoded);     
+        console.log(docs);
     
     } else {throw err;}
   });
