@@ -16,8 +16,7 @@
     "serve-favicon": "~2.3.0",
     "connect": "*",
     "mongoose": "*",
-    "express-xml-bodyparser": "~0.2.2",
-    "protobufjs":"*"
+    "express-xml-bodyparser": "~0.2.2"
   },
   "engines" : {
     "node" : "~0.12.0"
