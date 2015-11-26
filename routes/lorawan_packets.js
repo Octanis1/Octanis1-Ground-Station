@@ -26,7 +26,7 @@ router.get('/'+process.env.GATEWAY_KEY, function(req, res, next) {
 
   LorawanPacket.find({}, function(err, docs) {
     if (!err){ 
-        res.send(docs);    
+        res.jsonp(docs);    
 
         //console.log(docs);
     
