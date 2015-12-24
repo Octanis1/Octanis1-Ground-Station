@@ -16,6 +16,6 @@
     "connect": "*",
     "mongoose": "*",
     "express-xml-bodyparser": "~0.2.2",
-    "protobufjs":"*"
+    "xml2js":"*"
   }
 }
