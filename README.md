@@ -1,7 +1,8 @@
 # Octanis1-Mission-Base-Station
-Octanis communicates via two way Iridium, VHF and Bluetooth. All data received from the rover is sent to what we'll call "Mission Base Station". This is a service running on a cloud server accepting structured data via REST API. Since this interface is standardised and centralised, it can be used for various other purposes like monitoring displays, phone apps and web apps.
+Octanis communicates via two way Iridium, LoRa and Bluetooth. All data received from the rover is sent to what we'll call "Mission Base Station" (MBS). 
+This is a service running on a cloud server accepting structured data (XML, JSON) via REST API. The MBS provides data to monitoring displays, phone apps and web apps.
 
-This base station currently accepts incoming LoRaWAN end-device packets from an Thingpark Actility LoRaWAN application server.
+This MBS currently accepts incoming LoRaWAN end-device packets from an Thingpark Actility LoRaWAN application server.
 
 __Warning:__ This software is currently for testing/dev purposes only.
 
