@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var Heartbeat = require('../models/gsmPacket');
+var gsmPacket = require('../models/gsm_packet');
 
 
 
