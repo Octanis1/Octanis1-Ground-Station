@@ -1,15 +1,15 @@
+var bodyParser = require('body-parser');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var cors = require('cors');
 
 
-//Accept UDP datagrams for LoRaWAN 
+//Accept UDP datagrams for LoRaWAN
 
+/*
 var PORT = 1780;
 var HOST = '0.0.0.0';
 
@@ -23,11 +23,10 @@ server.on('listening', function () {
 
 server.on('message', function (message, remote) {
     console.log(remote.address + ':' + remote.port +' - ' + message);
-
 });
 
 server.bind(PORT, HOST);
-
+*/
 
 //routes
 var routes = require('./routes/index');
@@ -37,8 +36,19 @@ var lorawan_packets = require('./routes/lorawan_packets')
 
 
 var app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.text());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
 app.set('port', process.env.PORT);
 app.set('env', 'development');
+app.use(logger('dev'));
+
+//enable all cors requests
+app.use(cors());
+
 
 //app routes
 app.use('/', routes);
@@ -47,21 +57,13 @@ app.use('/heartbeats', heartbeats);
 app.use('/lorawan_packets', lorawan_packets);
 
 
-//mongodb connection 
-mongoose.connect('mongodb://'+process.env.MONGODB_ADDON_USER+':'+process.env.MONGODB_ADDON_PASSWORD+'@'+process.env.MONGODB_ADDON_HOST+':'+process.env.MONGODB_ADDON_PORT+'/'+process.env.MONGODB_ADDON_DB); 
+//mongodb connection
+mongoose.connect('mongodb://'+process.env.MONGODB_ADDON_USER+':'+process.env.MONGODB_ADDON_PASSWORD+'@'+process.env.MONGODB_ADDON_HOST+':'+process.env.MONGODB_ADDON_PORT+'/'+process.env.MONGODB_ADDON_DB);
 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
-app.use(logger('dev')); 
-app.use(cookieParser());
-app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-
-//enable all cors requests
-app.use(cors());
 
 
 // catch 404 and forward to error handler
@@ -97,4 +99,3 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-
