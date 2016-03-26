@@ -4,14 +4,6 @@ var xmlParser = require('express-xml-bodyparser');
 
 var parseString = require('xml2js').parseString;
 
-
-
-//protobuf
-var ProtoBuf = require("protobufjs");
-var ByteBuffer = ProtoBuf.ByteBuffer;                   
-var RoverStatusBuilder = ProtoBuf.loadProtoFile("protobuf/rover_status.proto");
-var RoverStatus = RoverStatusBuilder.build("rover_status");
-
 //model
 var RockblockPacket = require('../models/rockblock_packet');
 
@@ -30,11 +22,11 @@ router.post('/'+ process.env.GATEWAY_KEY, xmlParser({trim: false, explicitArray:
   newRockblockPacket.save(function(err){
     if(err) throw err;
   });
-  
+
   // response sent as JSON anyway ?!
   res.contentType('application/xml');
   /* req.body is sent back correctly here. Tested with :
-  
+
     <?xml version="1.0" encoding="UTF-8" ?>
     <packet>
         <imei>321</imei>
@@ -56,8 +48,8 @@ router.post('/'+ process.env.GATEWAY_KEY, xmlParser({trim: false, explicitArray:
 router.get('/'+ process.env.GATEWAY_KEY, function(req, res, next) {
 
   RockblockPacket.find({}, function(err, docs) {
-    if (!err){ 
-        res.send(docs);        
+    if (!err){
+        res.send(docs);
     } else {throw err;}
   });
 
