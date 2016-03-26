@@ -32,7 +32,9 @@ server.bind(PORT, HOST);
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var heartbeats = require('./routes/heartbeats');
-var lorawan_packets = require('./routes/lorawan_packets')
+var lorawan_packets = require('./routes/lorawan_packets');
+var rockblock_packets = require('./routes/rockblock_packets');
+var gsm_packets = require('./routes/gsm_packets');
 
 
 var app = express();
@@ -53,8 +55,9 @@ app.use(cors());
 //app routes
 app.use('/', routes);
 app.use('/users', users);
-app.use('/heartbeats', heartbeats);
+app.use('/gsm_packets', gsm_packets);
 app.use('/lorawan_packets', lorawan_packets);
+app.use('/rockblock_packets', rockblock_packets);
 
 
 //mongodb connection

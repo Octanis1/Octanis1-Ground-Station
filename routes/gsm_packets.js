@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-var Heartbeat = require('../models/heartbeat');
+var Heartbeat = require('../models/gsmPacket');
 
 
 
-/* GET heartbeats listing. */
+/* GET gsmPacket listing. */
 router.get('/', function(req, res, next) {
 
-  Heartbeat.find({}, function(err, docs) {
+  gsmPacket.find({}, function(err, docs) {
     if (!err){
         console.log(docs);
         res.send(docs);
@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 
 
 /* POST create heartbeat*/
-router.post('/', function(req, res) {
+router.post('/'+process.env.GATEWAY_KEY, function(req, res) {
   var ua = req.headers['user-agent'];
   var payload = req.body;
 
@@ -28,9 +28,9 @@ router.post('/', function(req, res) {
   console.log(req.body);
   console.log(req.headers);
   /*
-  var newHeartbeat = Heartbeat(req.body);
+  var newgsmPacket = Heartbeat(req.body);
 
-  newHeartbeat.save(function(err){
+  newgsmPacket.save(function(err){
     if(err) throw err;
   });
   */
@@ -40,7 +40,7 @@ router.post('/', function(req, res) {
 
 
 
-/* GET last heartbeat */
+/* GET last gsmPacket */
 router.get('/last', function(req, res, next) {
 
   //TODO
