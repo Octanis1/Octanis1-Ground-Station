@@ -30,7 +30,6 @@ server.bind(PORT, HOST);
 
 //routes
 var routes = require('./routes/index');
-var heartbeats = require('./routes/heartbeats');
 var lorawan_packets = require('./routes/lorawan_packets');
 var rockblock_packets = require('./routes/rockblock_packets');
 var gsm_packets = require('./routes/gsm_packets');
