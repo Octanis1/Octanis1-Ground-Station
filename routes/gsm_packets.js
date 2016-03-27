@@ -34,7 +34,7 @@ router.post('/'+process.env.GATEWAY_KEY, function(req, res) {
     timestamp: new Date()
   }
 
-  var newgsmPacket = Heartbeat(newgsmPacket_frame);
+  var newgsmPacket = gsmPacket(newgsmPacket_frame);
 
   newgsmPacket.save(function(err){
     if(err) throw err;
