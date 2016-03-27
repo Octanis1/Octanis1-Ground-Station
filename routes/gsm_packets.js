@@ -27,13 +27,19 @@ router.post('/'+process.env.GATEWAY_KEY, function(req, res) {
   console.log('User-Agent: ' + ua);
   console.log(req.body);
   console.log(req.headers);
-  /*
-  var newgsmPacket = Heartbeat(req.body);
+
+  var newgsmPacket_frame = {
+    user_agent: ua,
+    payload_hex: req.body,
+    timestamp: new Date()
+  }
+
+  var newgsmPacket = Heartbeat(newgsmPacket_frame);
 
   newgsmPacket.save(function(err){
     if(err) throw err;
   });
-  */
+
   res.send('OK');
 
 });
