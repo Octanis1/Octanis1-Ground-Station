@@ -10,7 +10,6 @@ router.get('/', function(req, res, next) {
 
   gsmPacket.find({}, function(err, docs) {
     if (!err){
-        console.log(docs);
         res.send(docs);
     } else {throw err;}
   });
