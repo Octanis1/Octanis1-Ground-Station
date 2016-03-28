@@ -38,6 +38,7 @@ var gsm_packets = require('./routes/gsm_packets');
 var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.text());
+app.use(bodyParser.raw());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
