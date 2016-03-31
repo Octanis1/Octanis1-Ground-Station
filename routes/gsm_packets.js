@@ -38,7 +38,8 @@ router.post('/'+process.env.GATEWAY_KEY, function(req, res) {
   var newgsmPacket_frame = {
     user_agent: ua,
     payload_hex: payload_hex_string,
-    timestamp: new Date()
+    timestamp: new Date(),
+    board: req.query.board
   }
 
   var newgsmPacket = gsmPacket(newgsmPacket_frame);
