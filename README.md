@@ -1,4 +1,4 @@
-# Octanis1-Mission-Base-Station
+# Octanis1-Ground-Station
 Octanis communicates via two way Iridium, LoRa and Bluetooth. All data received from the rover is sent to what we'll call "Mission Base Station" (MBS). 
 This is a service running on a cloud server accepting structured data (XML, JSON) via REST API. The MBS provides data to monitoring displays, phone apps and web apps.
 
