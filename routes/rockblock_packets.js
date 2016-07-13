@@ -1,31 +1,26 @@
 var express = require('express');
 var router = express.Router();
-var xmlParser = require('express-xml-bodyparser');
+var fs = require('fs');
+var inspect = require('util').inspect;
 
-var parseString = require('xml2js').parseString;
+var xml2js = require('xml2js');
+var parser = new xml2js.Parser();
+
 
 //model
 var RockblockPacket = require('../models/rockblock_packet');
 
 
-
 /* POST */
-router.post('/'+ process.env.GATEWAY_KEY, xmlParser({trim: false, explicitArray: false}), function(req, res) {
 
-    console.dir("-- body: " + req.body.packet);
-    // req.body not parsed here ?! req.body.packet neither (see below)
-    parseString(req.body.packet, function (err, result) {
-        console.dir(result);
-    });
+router.post('/'+ process.env.GATEWAY_KEY, function(req, res) {
+res.contentType('text/plain');
+   
+   
+   
 
-  var newRockblockPacket = RockblockPacket(req.body);
-  newRockblockPacket.save(function(err){
-    if(err) throw err;
-  });
-
-  // response sent as JSON anyway ?!
-  res.contentType('application/xml');
-  /* req.body is sent back correctly here. Tested with :
+  /*
+   req.body is sent back correctly here. Tested with :
 
     <?xml version="1.0" encoding="UTF-8" ?>
     <packet>
@@ -37,12 +32,43 @@ router.post('/'+ process.env.GATEWAY_KEY, xmlParser({trim: false, explicitArray:
         <iridium_cep>9</iridium_cep>
         <data>08befdfaf5fbffffffff011500802e441dbebebebe20befdfaf5fbffffffff01280530befdfaf5fbffffffff01380540befdfaf5fbffffffff01</data>
     </packet>
-  */
-  res.status(200).send(req.body);
-  //res.send('OK');
+  
+  res.status(200).send(req.body);*/
+  
+  parser.parseString(req.body.toString(), function(err,result){
+    //Extract the value from the data element
+    imei = result['packet']['imei'];
+    momsn = result['packet']['momsn'];
+    transmit_time = result['packet']['transmit_time'];
+    iridium_latitude = result['packet']['iridium_latitude'];
+    iridium_longitude = result['packet']['iridium_longitude'];
+    iridium_cep = result['packet']['iridium_cep'];
+    data = result['packet']['data'];
+    
+  });
+  
+  var newRockblockPacket_frame = {  
+    imei: imei,
+    momsn: momsn,
+    transmit_time: transmit_time,
+    iridium_latitude: iridium_latitude,
+    iridium_longitude: iridium_longitude,
+    iridium_cep: iridium_cep,
+    data: data
+  }
 
+  var newRockblockPacket = RockblockPacket(newRockblockPacket_frame);
+
+  console.log("imei :".concat(imei.toString(),"\nmomsn :",momsn.toString(),"\niridium_latitude :", iridium_latitude.toString(), "\niridium_cep :", iridium_cep.toString(),"\ndata :",data.toString()))
+
+  // le remplissage de la base ne fonctionne pas car il y a un probleme avec transmit_time qui est "undefined"
+
+  /*newRockblockPacket.save(function(err){
+    if(err) throw err;
+  });*/ 
+  
+  res.status(200).send('OK');
 });
-
 
 /* GET */
 router.get('/'+ process.env.GATEWAY_KEY, function(req, res, next) {

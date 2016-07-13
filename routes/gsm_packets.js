@@ -18,7 +18,7 @@ router.get('/', function(req, res, next) {
 
 
 /* POST create heartbeat*/
-router.post('/'+process.env.GATEWAY_KEY, function(req, res) {
+router.post('/', function(req, res) {
   var ua = req.headers['user-agent'];
   var payload_hex_string = "";
 
