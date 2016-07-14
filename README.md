@@ -52,7 +52,7 @@ PORT=8080 npm start
 ```
 
 ## Usage as LoRaWAN AS (application server)
-Make sure the base station is up and running by browsing to it (e.g. http://localhost:8080). The  base station accepts XML POST requests at this address, which you must setup in your ThingPark device manager:
+Make sure the base station is u running by browsing to it (e.g. http://localhost:8080). The  base station accepts XML POST requests at this address, which you must setup in your ThingPark device manager:
 ```
 http://[basestation_host]/lorawan_packets/[GATEWAY_KEY environment variable that you setup previously]
 ```

@@ -14,11 +14,7 @@ var RockblockPacket = require('../models/rockblock_packet');
 /* POST */
 
 router.post('/'+ process.env.GATEWAY_KEY, function(req, res) {
-res.contentType('text/plain');
-   
-   
-   
-
+  res.contentType('text/plain');
   /*
    req.body is sent back correctly here. Tested with :
 
@@ -31,15 +27,22 @@ res.contentType('text/plain');
         <iridium_longitude>9</iridium_longitude>
         <iridium_cep>9</iridium_cep>
         <data>08befdfaf5fbffffffff011500802e441dbebebebe20befdfaf5fbffffffff01280530befdfaf5fbffffffff01380540befdfaf5fbffffffff01</data>
-    </packet>
-  
-  res.status(200).send(req.body);*/
+    </packet>*/
   
   parser.parseString(req.body.toString(), function(err,result){
     //Extract the value from the data element
     imei = result['packet']['imei'];
     momsn = result['packet']['momsn'];
-    transmit_time = result['packet']['transmit_time'];
+    transit_time = result['packet']['transit_time'];
+    
+    var year='20'.concat(transit_time[0][0],transit_time[0][1]);
+    var month=transit_time[0][3].concat(transit_time[0][4]);
+    var day=transit_time[0][6].concat(transit_time[0][7]);
+    var hour=transit_time[0][8].concat(transit_time[0][9]);
+    var minute=transit_time[0][11].concat(transit_time[0][12]);
+    var second=transit_time[0][14].concat(transit_time[0][15]);
+    dt = new Date(year,month,day,hour,minute,second);
+
     iridium_latitude = result['packet']['iridium_latitude'];
     iridium_longitude = result['packet']['iridium_longitude'];
     iridium_cep = result['packet']['iridium_cep'];
@@ -48,24 +51,22 @@ res.contentType('text/plain');
   });
   
   var newRockblockPacket_frame = {  
-    imei: imei,
-    momsn: momsn,
-    transmit_time: transmit_time,
-    iridium_latitude: iridium_latitude,
-    iridium_longitude: iridium_longitude,
-    iridium_cep: iridium_cep,
+    imei: parseFloat(imei),
+    momsn: parseFloat(momsn),
+    transit_time: dt, //transit_time,
+    iridium_latitude: parseFloat(iridium_latitude),
+    iridium_longitude: parseFloat(iridium_longitude),
+    iridium_cep: parseFloat(iridium_cep),
     data: data
   }
 
   var newRockblockPacket = RockblockPacket(newRockblockPacket_frame);
 
-  console.log("imei :".concat(imei.toString(),"\nmomsn :",momsn.toString(),"\niridium_latitude :", iridium_latitude.toString(), "\niridium_cep :", iridium_cep.toString(),"\ndata :",data.toString()))
+//  console.log("imei :".concat(imei.toString(),"\nmomsn :",momsn.toString(),"\niridium_latitude :", iridium_latitude.toString(), "\niridium_cep :", iridium_cep.toString(),"\ndata :",data.toString()))
 
-  // le remplissage de la base ne fonctionne pas car il y a un probleme avec transmit_time qui est "undefined"
-
-  /*newRockblockPacket.save(function(err){
+  newRockblockPacket.save(function(err){
     if(err) throw err;
-  });*/ 
+  });
   
   res.status(200).send('OK');
 });

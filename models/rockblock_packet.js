@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var RockblockPacketSchema = new Schema({  
   imei: Number,
   momsn: Number,
-  transmit_time: Date,
+  transit_time: Date,
   iridium_latitude: Number,
   iridium_longitude: Number,
   iridium_cep: Number,
