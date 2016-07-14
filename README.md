@@ -6,7 +6,6 @@ This MBS currently accepts incoming LoRaWAN end-device packets from an Thingpark
 
 __Warning:__ This software is currently for testing/dev purposes only.
 
-
 ## Requirements
 - MongoDB instance running somewhere.
 - nodejs / npm
@@ -50,6 +49,20 @@ cd Octanis1-Mission-Base-Station
 npm install
 PORT=8080 npm start  
 ```
+
+## To test an example with the database of Jajoe on Mlab :
+```
+npm install
+export MONGODB_ADDON_USER=jajoe
+export MONGODB_ADDON_PASSWORD=octanis
+export MONGODB_ADDON_HOST=ds043972.mlab.com
+export MONGODB_ADDON_PORT=43972
+export MONGODB_ADDON_DB=octanis1_jajoe
+export GATEWAY_KEY=
+PORT=8080 npm start
+to test : https://octanis-ground-station-jajoe.c9users.io/rockblock_packets (you will see every rockblock_packets in the database)
+```
+
 
 ## Usage as LoRaWAN AS (application server)
 Make sure the base station is u running by browsing to it (e.g. http://localhost:8080). The  base station accepts XML POST requests at this address, which you must setup in your ThingPark device manager:
