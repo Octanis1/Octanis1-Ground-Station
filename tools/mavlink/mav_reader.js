@@ -106,14 +106,7 @@ function create_cloud(testData){
   console.log(arrayMsg);
   for(i=0;i<arrayMsg.length;i++){
     point=arrayMsg[i]
-    cloud.push({x:point[2],y:point[1],z:point[3],color:'red'})
+    cloud.push({x:parseInt(point[2]),y:parseInt(point[1]),z:parseInt(point[3]),color:"red"})
   }
   return cloud
 }
-
-console.log(create_cloud("fe1e018018000000040001000100010000000002e4b\nfe1e018018000000040001000100010000000002e4b\nfe1e01801800000004000000040001000000000f4b8"))
-/*console.log(mav_getLen("fe1e00018000000004000f00010002000000000147c"))
-console.log(mav_getBinData("fe1e000180000000040001000100010000000002e4b"))
-console.log(mav_getBinData("fe1e00018000000004000f00010002000000000147c"))
-console.log(mav_gps_raw_int(upper_hex("fe1e000180000000040001000100010000000002e4b")))
-console.log(mav_gps_raw_int(upper_hex("fe1e00018000000004000f00010002000000000147c")))*/
