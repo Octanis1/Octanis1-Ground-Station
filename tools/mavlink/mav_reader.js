@@ -84,18 +84,36 @@ function upper_hex(hexa){
   return hexa.toUpperCase();
 }
 
-function tran
-
-function createCloud(testData){
-  var cloud=new Array();
-  var arrayMsg=transform_into_array(testData);
-  for
+function transform_into_array(data){
+  var myArray=new Array();
+  var lines=data.split("\n");
+  console.log(lines)
+  for(i=0;i<lines.length;i++){
+    line=upper_hex(lines[i])
+    console.log(line)
+    if(mav_is_gps_raw_int(line)){
+      dataLine=mav_gps_raw_int(line)
+      console.log(dataLine);
+      myArray.push(dataLine)
+    }
+  }
+  return myArray
 }
 
-console.log(mav_getLen("fe1e000180000000040001000100010000000002e4b"))
-console.log(mav_getLen("fe1e00018000000004000f00010002000000000147c"))
+function create_cloud(testData){
+  var cloud=new Array();
+  var arrayMsg=transform_into_array(testData);
+  console.log(arrayMsg);
+  for(i=0;i<arrayMsg.length;i++){
+    point=arrayMsg[i]
+    cloud.push({x:point[2],y:point[1],z:point[3],color:'red'})
+  }
+  return cloud
+}
+
+console.log(create_cloud("fe1e018018000000040001000100010000000002e4b\nfe1e018018000000040001000100010000000002e4b\nfe1e01801800000004000000040001000000000f4b8"))
+/*console.log(mav_getLen("fe1e00018000000004000f00010002000000000147c"))
 console.log(mav_getBinData("fe1e000180000000040001000100010000000002e4b"))
 console.log(mav_getBinData("fe1e00018000000004000f00010002000000000147c"))
 console.log(mav_gps_raw_int(upper_hex("fe1e000180000000040001000100010000000002e4b")))
-console.log(mav_gps_raw_int(upper_hex("fe1e00018000000004000f00010002000000000147c")))
-
+console.log(mav_gps_raw_int(upper_hex("fe1e00018000000004000f00010002000000000147c")))*/
