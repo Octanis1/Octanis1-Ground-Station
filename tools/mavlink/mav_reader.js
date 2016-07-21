@@ -1,0 +1,101 @@
+/* reference : http://www.jiunn-kai-huang.com/#!Mavlink/c1mbt/5649a9f70cf2f51f323cffb7
+   examples : FE094E0101000000000002035104031C7F, fe1e01811800000000000000001000000000ffff4fff5fd
+*/
+
+var convertNumToBase = function( num, baseA, baseB ){
+	if( !( baseA < 2 || baseB < 2 || isNaN( baseA ) 
+		|| isNaN(baseB) || baseA > 36 || baseB > 36) ){
+        return parseInt( num, baseA ).toString( baseB );
+    }
+};	
+//convertNumToBase( 1111, 2, 10 );		// return "15"
+//convertNumToBase( 10101111, 2, 16 );		// return "af"
+
+
+function mav_getLen(packet){
+  var result="".concat(packet[2],packet[3]);
+  return parseInt(result,16);
+}
+
+function mav_getId(packet){
+  var result="".concat(packet[8],packet[9]);
+  return parseInt(result,16);
+}
+
+function mav_getData(packet){
+  var length=mav_getLen(packet);
+  var i=12;
+  var limit=i+length;
+  var result="";
+  while(i<limit){
+    result=result.concat(packet[i]);
+    i+=1;
+  }
+  return result;
+}
+
+function mav_getBinData(packet){
+  var raw=mav_getData(packet);
+  var lenIni=raw.length
+  var binData=convertNumToBase(raw, 16, 2);
+  var addZeros=4*lenIni-binData.length
+  binData=("0".repeat(addZeros)).concat(binData)
+  return binData;
+}
+
+function separate_multiple_mav(packet){
+  var result=[];
+  var lengthTotal=packet.length;
+  var lengthActuel=mav_getLen(packet)+16;
+  result.push(packet.substr(0,lengthActuel));
+  if(lengthActuel<lengthTotal){
+    packet=packet.substr(lengthActuel);
+  }
+  while(lengthActuel<lengthTotal){
+    lengthActuel+=mav_getLen(packet)+16;
+    tmp=mav_getLen(packet)+16;
+    result.push(packet.substr(0,tmp));
+    if(lengthActuel<lengthTotal){
+      packet=packet.substr(tmp);
+    }
+  }
+  return result;
+}
+
+function mav_is_gps_raw_int(packet){
+  if(mav_getId(packet)==24){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
+function mav_gps_raw_int(packet){
+  var binData=mav_getBinData(packet);
+  var time_usec=binData.substr(0,64), eph=binData.substr(136,16), epv=binData.substr(152,16), vel=binData.substr(168,16), cog=binData.substr(184,16), sat_visible=binData.substr(200,8);
+  var fix=binData.substr(16,8), lat=binData.substr(24,16), lon=binData.substr(40,16), alt=binData.substr(56,16);
+  // you can add the other variables to this if you need more information (e.g time_usec, etc.)
+  //return [fix, lat, lon, alt];  
+  return [convertNumToBase(fix,2,10), convertNumToBase(lat,2,10), convertNumToBase(lon,2,10), convertNumToBase(alt,2,10)];
+}
+
+function upper_hex(hexa){
+  return hexa.toUpperCase();
+}
+
+function tran
+
+function createCloud(testData){
+  var cloud=new Array();
+  var arrayMsg=transform_into_array(testData);
+  for
+}
+
+console.log(mav_getLen("fe1e000180000000040001000100010000000002e4b"))
+console.log(mav_getLen("fe1e00018000000004000f00010002000000000147c"))
+console.log(mav_getBinData("fe1e000180000000040001000100010000000002e4b"))
+console.log(mav_getBinData("fe1e00018000000004000f00010002000000000147c"))
+console.log(mav_gps_raw_int(upper_hex("fe1e000180000000040001000100010000000002e4b")))
+console.log(mav_gps_raw_int(upper_hex("fe1e00018000000004000f00010002000000000147c")))
+
