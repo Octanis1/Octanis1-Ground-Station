@@ -34,9 +34,20 @@ def publishMQTT_gps_raw_int(obs_time=0,fix_type=4,lat=0,lon=0,alt=0):
    m = mav.gps_raw_int_encode(0,obs_time,fix_type,lat,lon,alt,0,0,0,0)
    m.pack(mav)
    data = m.get_msgbuf()
+   print(data)
    dataEncode = encodeData(data)
    print(dataEncode)
 
-for x in range(30):
-   for y in range(30):
-      publishMQTT_gps_raw_int(lat=x,lon=y+30*x,alt=1)
+j=1
+for i in range(100):
+   if i%2 == 0:
+      j+=1
+   publishMQTT_gps_raw_int(lat=0,lon=i,alt=j)
+altitude=j
+longiture=i
+j=0
+for i in range(200):
+   if i%4 == 0:
+      j+=1
+   publishMQTT_gps_raw_int(lat=i,lon=longiture+j,alt=altitude+j)
+
