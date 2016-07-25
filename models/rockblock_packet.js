@@ -8,7 +8,9 @@ var RockblockPacketSchema = new Schema({
   iridium_latitude: Number,
   iridium_longitude: Number,
   iridium_cep: Number,
-  data: String
+  data: String,
+  decodeData: Object,
+  decodePayload: Object
 });
 
 var RockblockPacket = mongoose.model('RockblockPacket', RockblockPacketSchema);  
