@@ -71,6 +71,15 @@ function mav_is_gps_raw_int(packet){
   }
 }
 
+function mav_is_sys_status(packet){
+  if(mav_getId(packet)==1){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
 function mav_gps_raw_int(packet){
   var binData=mav_getBinData(packet);
   var time_usec=binData.substr(0,64), eph=binData.substr(136,16), epv=binData.substr(152,16), vel=binData.substr(168,16), cog=binData.substr(184,16), sat_visible=binData.substr(200,8);
@@ -78,6 +87,14 @@ function mav_gps_raw_int(packet){
   // you can add the other variables to this if you need more information (e.g time_usec, etc.)
   //return [fix, lat, lon, alt];  
   return [convertNumToBase(fix,2,10), convertNumToBase(lat,2,10), convertNumToBase(lon,2,10), convertNumToBase(alt,2,10)];
+}
+
+function mav_sys_status(packet){
+  var binData=mav_getBinData(packet);
+  var volt=binData.substr(36,8), amp=binData.substr(44,8), bat=binData.substr(100,8);
+  // you can add the other variables to this if you need more information (e.g time_usec, etc.)
+  //return [fix, lat, lon, alt];  
+  return [convertNumToBase(volt,2,10), convertNumToBase(amp,2,10), convertNumToBase(bat,2,10)];
 }
 
 function upper_hex(hexa){
@@ -110,3 +127,6 @@ function create_cloud(testData){
   }
   return cloud
 }
+
+console.log(convertNumToBase(mav_getData(upper_hex("fe1f0001010110001000101960101010101015a1ec0d"),16,2)))
+console.log(mav_sys_status(upper_hex("fe1f0001010110001000101960101010101015a1ec0d")))
