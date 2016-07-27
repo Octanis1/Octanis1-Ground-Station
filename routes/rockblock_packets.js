@@ -26,6 +26,20 @@ myMAV.on("message", function(message) {
    //console.log(message);
 });
 
+myMAV.on("RAW_PRESSURE", function(message, fields) {
+    console.log(fields);
+    newRockblockPacket_frame = {  
+      decodeData: message,
+      decodePayload: fields
+    };
+    
+    var newRockblockPacket = RockblockPacket(newRockblockPacket_frame);
+
+    newRockblockPacket.save(function(err){
+      if(err) throw err;
+    });
+});
+
 myMAV.on("SYS_STATUS", function(message, fields) {
     console.log(fields);
     newRockblockPacket_frame = {  
@@ -99,6 +113,21 @@ function sys_status_generator(volt,amp,bat)
  });
 }
 
+function raw_pressure_generator(press_abs,temperature)
+{
+    myMAV.createMessage('RAW_PRESSURE', 
+  {
+    'time_usec' : 0,
+    'press_abs': press_abs,
+    'press_diff1' : 0,
+    'press_diff2' : 0,
+    'temperature': temperature
+  },
+  function(msg) {
+   console.log(msg.buffer);
+ });
+}
+
 router.post('/'+ process.env.GATEWAY_KEY, xmlParser({trim: false, explicitArray: false}), function(req, res) {
   //console.log(req.body.packet);
   var transit_time = req.body.packet.transit_time;
@@ -150,6 +179,13 @@ router.get('/generator/sys_status/'+ process.env.GATEWAY_KEY, function(req, res,
   var a = sys_status_generator(9000,200,100);
   res.send(a);
 });
+
+router.get('/generator/raw_pressure/'+ process.env.GATEWAY_KEY, function(req, res, next) {
+  var a = raw_pressure_generator(100,-20);
+  res.send(a);
+});
+
+
 
 router.get('/'+ process.env.GATEWAY_KEY, function(req, res, next) {
   RockblockPacket.find({}, function(err, docs) {
