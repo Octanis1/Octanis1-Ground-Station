@@ -68,6 +68,20 @@ myMAV.on("GPS_RAW_INT", function(message, fields) {
     });
 });
 
+myMAV.on("NAMED_VALUE_FLOAT", function(message, fields) {
+    console.log(fields);
+    newRockblockPacket_frame = {  
+      decodeData: message,
+      decodePayload: fields
+    };
+    
+    var newRockblockPacket = RockblockPacket(newRockblockPacket_frame);
+
+    newRockblockPacket.save(function(err){
+      if(err) throw err;
+    });
+});
+
 function gps_raw_int_generator(longitude,latitude,altitude)
 {
     myMAV.createMessage('GPS_RAW_INT', 
@@ -122,6 +136,19 @@ function raw_pressure_generator(press_abs,temperature)
     'press_diff1' : 0,
     'press_diff2' : 0,
     'temperature': temperature
+  },
+  function(msg) {
+   console.log(msg.buffer);
+ });
+}
+
+function named_value_float_generator(name,value)
+{
+    myMAV.createMessage('NAMED_VALUE_FLOAT', 
+  {
+    'time_boot_ms' : 0,
+    'name': name,
+    'value' : value
   },
   function(msg) {
    console.log(msg.buffer);
@@ -220,6 +247,40 @@ router.get('/raw_pressure_data/'+ process.env.GATEWAY_KEY, function(req, res, ne
   });
 });
 
+router.get('/uv_data/'+ process.env.GATEWAY_KEY, function(req, res, next) {
+  var final="";
+  RockblockPacket.find({}, function(err, docs) {
+    if (!err){
+        docs.forEach(function(item,index){
+          if(item.decodeData != undefined){
+            if(item.decodeData.id == 251){
+              if(item.decodePayload.name[0] == "U")
+                final=final.concat("{\"uv\": ",String(item.decodePayload.value),"}\n");
+            }  
+          }
+        });
+        res.send(final);
+    } else {throw err;}
+  });
+});
+
+router.get('/geiger_data/'+ process.env.GATEWAY_KEY, function(req, res, next) {
+  var final="";
+  RockblockPacket.find({}, function(err, docs) {
+    if (!err){
+        docs.forEach(function(item,index){
+          if(item.decodeData != undefined){
+            if(item.decodeData.id == 251){
+              if(item.decodePayload.name[0] == "G")
+              final=final.concat("{\"geiger_counter\": ",String(item.decodePayload.value),"}\n");
+            }  
+          }
+        });
+        res.send(final);
+    } else {throw err;}
+  });
+});
+
 router.get('/generator/gps_raw_int/'+ process.env.GATEWAY_KEY, function(req, res, next) {
   var a = gps_raw_int_generator(10,10,100);
   res.send(a);
@@ -235,7 +296,15 @@ router.get('/generator/raw_pressure/'+ process.env.GATEWAY_KEY, function(req, re
   res.send(a);
 });
 
+router.get('/generator/uv/'+ process.env.GATEWAY_KEY, function(req, res, next) {
+  var a = named_value_float_generator("U",50.0);
+  res.send(a);
+});
 
+router.get('/generator/geiger/'+ process.env.GATEWAY_KEY, function(req, res, next) {
+  var a = named_value_float_generator("G",10.0);
+  res.send(a);
+});
 
 router.get('/'+ process.env.GATEWAY_KEY, function(req, res, next) {
   RockblockPacket.find({}, function(err, docs) {
