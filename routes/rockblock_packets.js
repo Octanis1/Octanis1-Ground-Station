@@ -155,8 +155,10 @@ router.post('/'+ process.env.GATEWAY_KEY, xmlParser({trim: false, explicitArray:
   res.status(200).send('OK');
 });
 
+
 /* GET */
-router.get('/data/'+ process.env.GATEWAY_KEY, function(req, res, next) {
+
+router.get('/hex/'+ process.env.GATEWAY_KEY, function(req, res, next) {
   var final="";
   RockblockPacket.find({}, function(err, docs) {
     if (!err){
@@ -168,6 +170,54 @@ router.get('/data/'+ process.env.GATEWAY_KEY, function(req, res, next) {
     } else {throw err;}
   });
 
+});
+
+router.get('/gps_data/'+ process.env.GATEWAY_KEY, function(req, res, next) {
+  var final="";
+  RockblockPacket.find({}, function(err, docs) {
+    if (!err){
+        docs.forEach(function(item,index){
+          if(item.decodeData != undefined){
+            if(item.decodeData.id == 24){
+              final=final.concat("{\"lon\": ",String(item.decodePayload.lon),", \"lat\": ",String(item.decodePayload.lat),", \"alt\": ",String(item.decodePayload.alt),"}\n");
+            }  
+          }
+        });
+        res.send(final);
+    } else {throw err;}
+  });
+});
+
+router.get('/sys_status_data/'+ process.env.GATEWAY_KEY, function(req, res, next) {
+  var final="";
+  RockblockPacket.find({}, function(err, docs) {
+    if (!err){
+        docs.forEach(function(item,index){
+          if(item.decodeData != undefined){
+            if(item.decodeData.id == 1){
+              final=final.concat("{\"voltage_battery\": ",String(item.decodePayload.voltage_battery),", \"current_battery\": ",String(item.decodePayload.current_battery),", \"battery_remaining\": ",String(item.decodePayload.battery_remaining),"}\n");
+            }  
+          }
+        });
+        res.send(final);
+    } else {throw err;}
+  });
+});
+
+router.get('/raw_pressure_data/'+ process.env.GATEWAY_KEY, function(req, res, next) {
+  var final="";
+  RockblockPacket.find({}, function(err, docs) {
+    if (!err){
+        docs.forEach(function(item,index){
+          if(item.decodeData != undefined){
+            if(item.decodeData.id == 28){
+              final=final.concat("{\"press_abs\": ",String(item.decodePayload.press_abs),", \"temperature\": ",String(item.decodePayload.temperature),"}\n");
+            }  
+          }
+        });
+        res.send(final);
+    } else {throw err;}
+  });
 });
 
 router.get('/generator/gps_raw_int/'+ process.env.GATEWAY_KEY, function(req, res, next) {
