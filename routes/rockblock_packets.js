@@ -9,7 +9,7 @@ var parser = new xml2js.Parser();
 
 var mavlink = require('mavlink');
 
-var myMAV = new mavlink(0,0);
+var myMAV = new mavlink(1,1);
 
 
 //model
@@ -23,9 +23,11 @@ myMAV.on("ready", function() {
   console.log("ready");
 });
 myMAV.on("message", function(message) {
+   //console.log(message);
 });
 
 myMAV.on("SYS_STATUS", function(message, fields) {
+    console.log(fields);
     newRockblockPacket_frame = {  
       decodeData: message,
       decodePayload: fields
@@ -39,6 +41,7 @@ myMAV.on("SYS_STATUS", function(message, fields) {
 });
 
 myMAV.on("GPS_RAW_INT", function(message, fields) {
+    console.log(fields);
     newRockblockPacket_frame = {  
       decodeData: message,
       decodePayload: fields
@@ -50,7 +53,52 @@ myMAV.on("GPS_RAW_INT", function(message, fields) {
       if(err) throw err;
     });
 });
-  
+
+function gps_raw_int_generator(longitude,latitude,altitude)
+{
+    myMAV.createMessage('GPS_RAW_INT', 
+  {
+    'fix_type' : 4,
+    'lat' : latitude,
+    'lon' : longitude,
+    'alt': altitude,
+    'time_usec': 0,
+    'eph': 0,
+    'epv': 0,
+    'vel': 0,
+    'hdg': 0,
+    'cog': 0,
+    'satellites_visible': []
+  },
+  function(msg) {
+   console.log(msg.buffer);
+ });
+}
+
+function sys_status_generator(volt,amp,bat)
+{
+    myMAV.createMessage('SYS_STATUS', 
+  {
+    'mode' : 0,
+    'load': 1,
+    'voltage_battery' : volt,
+    'current_battery' : amp,
+    'battery_remaining': bat,
+    'onboard_control_sensors_present': 1,
+    'onboard_control_sensors_enabled': 1,
+    'onboard_control_sensors_health': 1,
+    'drop_rate_comm': 0,
+    'errors_comm': 0,
+    'errors_count1': 0,
+    'errors_count2': 0,
+    'errors_count3': 0,
+    'errors_count4': 0
+  },
+  function(msg) {
+   console.log(msg.buffer);
+ });
+}
+
 router.post('/'+ process.env.GATEWAY_KEY, xmlParser({trim: false, explicitArray: false}), function(req, res) {
   //console.log(req.body.packet);
   var transit_time = req.body.packet.transit_time;
@@ -91,6 +139,16 @@ router.get('/data/'+ process.env.GATEWAY_KEY, function(req, res, next) {
     } else {throw err;}
   });
 
+});
+
+router.get('/generator/gps_raw_int/'+ process.env.GATEWAY_KEY, function(req, res, next) {
+  var a = gps_raw_int_generator(10,10,100);
+  res.send(a);
+});
+
+router.get('/generator/sys_status/'+ process.env.GATEWAY_KEY, function(req, res, next) {
+  var a = sys_status_generator(9000,200,100);
+  res.send(a);
 });
 
 router.get('/'+ process.env.GATEWAY_KEY, function(req, res, next) {
