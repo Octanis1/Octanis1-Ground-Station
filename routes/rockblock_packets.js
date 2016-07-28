@@ -206,7 +206,7 @@ router.get('/gps_data/'+ process.env.GATEWAY_KEY, function(req, res, next) {
         docs.forEach(function(item,index){
           if(item.decodeData != undefined){
             if(item.decodeData.id == 24){
-              final=final.concat("{\"lon\": ",String(item.decodePayload.lon),", \"lat\": ",String(item.decodePayload.lat),", \"alt\": ",String(item.decodePayload.alt),"}\n");
+              final=final.concat('{"lon": ',String(item.decodePayload.lon),', "lat": ',String(item.decodePayload.lat),', "alt": ',String(item.decodePayload.alt),'}\n');
             }  
           }
         });
@@ -292,7 +292,7 @@ router.get('/generator/sys_status/'+ process.env.GATEWAY_KEY, function(req, res,
 });
 
 router.get('/generator/raw_pressure/'+ process.env.GATEWAY_KEY, function(req, res, next) {
-  var a = raw_pressure_generator(100,-20);
+  var a = raw_pressure_generator(100,-10);
   res.send(a);
 });
 
