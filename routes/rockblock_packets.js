@@ -68,6 +68,20 @@ myMAV.on("GPS_RAW_INT", function(message, fields) {
     });
 });
 
+myMAV.on("ATTITUDE", function(message, fields) {
+    console.log(fields);
+    newRockblockPacket_frame = {  
+      decodeData: message,
+      decodePayload: fields
+    };
+    
+    var newRockblockPacket = RockblockPacket(newRockblockPacket_frame);
+
+    newRockblockPacket.save(function(err){
+      if(err) throw err;
+    });
+});
+
 myMAV.on("NAMED_VALUE_FLOAT", function(message, fields) {
     console.log(fields);
     newRockblockPacket_frame = {  
@@ -136,6 +150,23 @@ function raw_pressure_generator(press_abs,temperature)
     'press_diff1' : 0,
     'press_diff2' : 0,
     'temperature': temperature
+  },
+  function(msg) {
+   console.log(msg.buffer);
+ });
+}
+
+function attitude_generator(roll,pitch,yaw)
+{
+    myMAV.createMessage('ATTITUDE', 
+  {
+    'time_boot_ms' : 0,
+    'roll': roll,
+    'pitch' : pitch,
+    'yaw' : yaw,
+    'rollspeed': 0,
+    'pitchspeed' : 0,
+    'yawspeed' : 0
   },
   function(msg) {
    console.log(msg.buffer);
@@ -247,6 +278,22 @@ router.get('/raw_pressure_data/'+ process.env.GATEWAY_KEY, function(req, res, ne
   });
 });
 
+router.get('/attitude_data/'+ process.env.GATEWAY_KEY, function(req, res, next) {
+  var final="";
+  RockblockPacket.find({}, function(err, docs) {
+    if (!err){
+        docs.forEach(function(item,index){
+          if(item.decodeData != undefined){
+            if(item.decodeData.id == 30){
+              final=final.concat("{\"roll\": ",String(item.decodePayload.roll),", \"pitch\": ",String(item.decodePayload.pitch),", \"yaw\": ",String(item.decodePayload.yaw),"}\n");
+            }  
+          }
+        });
+        res.send(final);
+    } else {throw err;}
+  });
+});
+
 router.get('/uv_data/'+ process.env.GATEWAY_KEY, function(req, res, next) {
   var final="";
   RockblockPacket.find({}, function(err, docs) {
@@ -293,6 +340,11 @@ router.get('/generator/sys_status/'+ process.env.GATEWAY_KEY, function(req, res,
 
 router.get('/generator/raw_pressure/'+ process.env.GATEWAY_KEY, function(req, res, next) {
   var a = raw_pressure_generator(100,-10);
+  res.send(a);
+});
+
+router.get('/generator/attitude/'+ process.env.GATEWAY_KEY, function(req, res, next) {
+  var a = attitude_generator(0,0,0);
   res.send(a);
 });
 
