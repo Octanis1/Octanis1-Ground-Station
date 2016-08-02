@@ -344,7 +344,7 @@ router.get('/generator/raw_pressure/'+ process.env.GATEWAY_KEY, function(req, re
 });
 
 router.get('/generator/attitude/'+ process.env.GATEWAY_KEY, function(req, res, next) {
-  var a = attitude_generator(0,0,0);
+  var a = attitude_generator(0,0,1);
   res.send(a);
 });
 
