@@ -1,0 +1,5341 @@
+{
+  "version": "2.59.0",
+  "modules": [
+    {
+      "url": "modules/types/edition/object_editor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "editable": [
+                "text"
+              ],
+              "expanded": [
+                []
+              ],
+              "storeObject": [
+                [
+                  "expand"
+                ]
+              ],
+              "displayValue": [
+                []
+              ],
+              "output": [
+                "new"
+              ],
+              "storedObject": [
+                "{\"minSize\":1,\"maxSize\":1,\"useHighlights\":true,\"colors\":1,\"points\":300,\"highlights\":4,\"useShapes\":true}"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 177,
+            "top": 47
+          },
+          "size": {
+            "width": 45,
+            "height": 29
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Untitled",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 90,
+            "top": 56
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 58,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onObjectChange",
+          "rel": "output",
+          "jpath": [],
+          "name": "defaultParams"
+        }
+      ],
+      "title": "",
+      "actions_out": {},
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/chart/basic/scatter3D/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "tooltip": [
+                []
+              ],
+              "tooltipJpath": [
+                null
+              ],
+              "displayPointCoordinates": [
+                [
+                  "onhover"
+                ]
+              ],
+              "grid": [
+                [
+                  "xy",
+                  "yz",
+                  "xz",
+                  "xysec",
+                  "yzsec",
+                  "xzsec"
+                ]
+              ],
+              "secondaryGrids": [
+                2
+              ],
+              "gridOriginX": [
+                ""
+              ],
+              "gridOriginY": [
+                ""
+              ],
+              "gridOriginZ": [
+                ""
+              ],
+              "projection": [
+                [
+                  "show"
+                ]
+              ],
+              "ticks": [
+                [
+                  "x",
+                  "y",
+                  "z",
+                  "xlab",
+                  "ylab",
+                  "zlab"
+                ]
+              ],
+              "labels": [
+                "axis"
+              ],
+              "minX": [
+                ""
+              ],
+              "maxX": [
+                ""
+              ],
+              "minY": [
+                ""
+              ],
+              "maxY": [
+                ""
+              ],
+              "minZ": [
+                ""
+              ],
+              "maxZ": [
+                ""
+              ],
+              "backgroundColor": [
+                [
+                  232,
+                  227,
+                  228,
+                  1
+                ]
+              ],
+              "annotationColor": [
+                [
+                  50,
+                  50,
+                  50,
+                  1
+                ]
+              ],
+              "sizeNormalization": [
+                0.02
+              ],
+              "xLabel": [
+                null
+              ],
+              "yLabel": [
+                null
+              ],
+              "zLabel": [
+                null
+              ],
+              "defaultPointColor": [
+                null
+              ],
+              "3d": [
+                null
+              ]
+            }
+          ],
+          "dataJpaths": [
+            [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "z": [
+                  "z"
+                ],
+                "color": [
+                  "color"
+                ],
+                "size": [
+                  "size"
+                ],
+                "shape": [
+                  "shape"
+                ],
+                "highlight": [
+                  "_highlight"
+                ]
+              }
+            ]
+          ],
+          "colorBar": [
+            {
+              "color": [
+                null
+              ],
+              "stopPosition": [
+                null
+              ]
+            }
+          ]
+        }
+      },
+      "id": 59,
+      "vars_in": [
+        {
+          "rel": "data3D",
+          "name": "test"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "event": "onHover",
+          "rel": "point",
+          "jpath": [],
+          "name": "clicked"
+        }
+      ],
+      "actions_out": {},
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0,
+            "right": 0
+          },
+          "size": {
+            "width": 61,
+            "height": 77
+          },
+          "display": true,
+          "title": "3D Scatter plot",
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer",
+          "bgColor": [
+            [
+              255,
+              255,
+              255,
+              0
+            ]
+          ]
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0,
+            "right": 0
+          },
+          "size": {
+            "width": 66,
+            "height": 55
+          },
+          "display": true,
+          "title": "3D plot",
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer",
+          "bgColor": [
+            [
+              255,
+              255,
+              255,
+              0
+            ]
+          ]
+        }
+      },
+      "title": "3D Scatter plot",
+      "zindex": 2,
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "url": "modules/types/server_interaction/webservice_search/",
+      "configuration": {
+        "sections": {
+          "postvariables": [
+            {
+              "sections": {},
+              "groups": {
+                "postvariables": [
+                  [
+                    {
+                      "destination": "data",
+                      "filter": "none"
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {
+          "group": [
+            {
+              "url": [
+                "https://octanis-ground-station-jajoe.c9users.io/rockblock_packets/gps_data"
+              ],
+              "method": [
+                "GET"
+              ],
+              "dataType": [
+                "json"
+              ],
+              "withCredentials": [
+                []
+              ],
+              "showStatus": [
+                [
+                  "display"
+                ]
+              ],
+              "button": [
+                [
+                  "button"
+                ]
+              ],
+              "buttonlabel": [
+                "Refresh"
+              ],
+              "buttonlabel_exec": [
+                "Refreshing"
+              ],
+              "onloadsearch": [
+                [
+                  "button"
+                ]
+              ],
+              "debounce": [
+                0
+              ],
+              "resultfilter": [
+                "var lines=data.split(\"\\n\");\nvar resultat=new Array();\nfor(i=0;i<lines.length;i++){\n    if(lines[i] != \"\"){\n        var line=lines[i];\n        line = JSON.parse(line)\n        resultat.push({\"x\": line.lat, \"y\": line.lon, \"z\": line.alt, \"color\":\"red\"});   \n    }\n}\nreturn resultat;"
+              ],
+              "askConfirm": [
+                []
+              ],
+              "confirmText": [
+                "Are you sure?"
+              ]
+            }
+          ],
+          "headers": [
+            [
+              {
+                "name": "J"
+              }
+            ]
+          ],
+          "searchparams": [
+            [
+              {
+                "destination": "url",
+                "fieldtype": "text"
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 29,
+            "top": 199
+          },
+          "size": {
+            "width": 17,
+            "height": 12
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the GPS data",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the GPS data",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 60,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {
+          "rel": "buttonColor",
+          "name": "click"
+        }
+      ],
+      "title": "Get the GPS data",
+      "vars_out": [
+        {
+          "event": "onSearchReturn",
+          "rel": "results",
+          "jpath": [],
+          "name": "gps"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/legacy/var_editor/",
+      "configuration": {},
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 54,
+            "top": 38
+          },
+          "size": {
+            "width": 20,
+            "height": 11
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 61,
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/edition/dualview/",
+      "configuration": {},
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 22,
+            "top": 40
+          },
+          "size": {
+            "width": 21,
+            "height": 19
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 62
+    },
+    {
+      "url": "modules/types/edition/dualview/",
+      "configuration": {},
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 23,
+            "top": 33
+          },
+          "size": {
+            "width": 14,
+            "height": 13
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 63
+    },
+    {
+      "url": "modules/types/chart/basic/scatter3D/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "tooltip": [
+                []
+              ],
+              "tooltipJpath": [
+                null
+              ],
+              "displayPointCoordinates": [
+                [
+                  "onhover"
+                ]
+              ],
+              "grid": [
+                [
+                  "xy",
+                  "yz",
+                  "xz"
+                ]
+              ],
+              "secondaryGrids": [
+                2
+              ],
+              "gridOriginX": [
+                ""
+              ],
+              "gridOriginY": [
+                ""
+              ],
+              "gridOriginZ": [
+                ""
+              ],
+              "projection": [
+                [
+                  "show"
+                ]
+              ],
+              "ticks": [
+                [
+                  "x",
+                  "y",
+                  "z",
+                  "xlab",
+                  "ylab",
+                  "zlab"
+                ]
+              ],
+              "labels": [
+                null
+              ],
+              "xLabel": [
+                null
+              ],
+              "yLabel": [
+                null
+              ],
+              "zLabel": [
+                null
+              ],
+              "minX": [
+                ""
+              ],
+              "maxX": [
+                ""
+              ],
+              "minY": [
+                ""
+              ],
+              "maxY": [
+                ""
+              ],
+              "minZ": [
+                ""
+              ],
+              "maxZ": [
+                ""
+              ],
+              "backgroundColor": [
+                [
+                  230,
+                  230,
+                  230,
+                  1
+                ]
+              ],
+              "defaultPointColor": [
+                [
+                  50,
+                  50,
+                  50,
+                  1
+                ]
+              ],
+              "annotationColor": [
+                [
+                  33,
+                  33,
+                  33,
+                  1
+                ]
+              ],
+              "sizeNormalization": [
+                0.02
+              ],
+              "3d": [
+                "none"
+              ]
+            }
+          ],
+          "dataJpaths": [
+            [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "y"
+                ],
+                "z": [
+                  "z"
+                ],
+                "color": [
+                  "color"
+                ],
+                "size": [],
+                "shape": [],
+                "highlight": []
+              }
+            ]
+          ],
+          "colorBar": [
+            [
+              {
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "stopPosition": 0
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 48,
+            "top": 188
+          },
+          "size": {
+            "width": 51,
+            "height": 33
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Plot 3D Rover's position",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Plot 3D Rover's position",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 64,
+      "vars_in": [
+        {
+          "rel": "data3D",
+          "name": "gps"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "title": "Plot 3D Rover's position",
+      "vars_out": [
+        {
+          "event": "onHover",
+          "rel": "info",
+          "jpath": []
+        }
+      ],
+      "actions_out": [],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/edition/object_editor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "editable": [
+                "view"
+              ],
+              "expanded": [
+                []
+              ],
+              "storeObject": [
+                []
+              ],
+              "displayValue": [
+                [
+                  "display"
+                ]
+              ],
+              "searchBox": [
+                [
+                  "search"
+                ]
+              ],
+              "sendButton": [
+                []
+              ],
+              "output": [
+                "new"
+              ],
+              "storedObject": [
+                "{}"
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 106,
+            "top": 1
+          },
+          "size": {
+            "width": 28,
+            "height": 18
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "terminal to debug",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "terminal to debug",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 65,
+      "vars_in": [
+        {
+          "rel": "value",
+          "name": "gps"
+        },
+        {
+          "rel": "value",
+          "name": "temperature"
+        },
+        {
+          "rel": "value",
+          "name": "battery"
+        },
+        {
+          "rel": "value",
+          "name": "uv"
+        },
+        {
+          "rel": "value",
+          "name": "current"
+        },
+        {
+          "rel": "value",
+          "name": "radioactivity"
+        },
+        {
+          "rel": "value",
+          "name": "voltage"
+        },
+        {
+          "rel": "value",
+          "name": "pressure"
+        },
+        {
+          "rel": "value",
+          "name": "rover_attitude"
+        },
+        {
+          "rel": "value",
+          "name": "rover_transformed"
+        },
+        {
+          "rel": "value",
+          "name": "attitude"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "title": "terminal to debug",
+      "actions_out": [],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/science/spectra/spectra_displayer/",
+      "configuration": {
+        "sections": {
+          "graph": [
+            {
+              "sections": {},
+              "groups": {
+                "graph": [
+                  {
+                    "url": [
+                      ""
+                    ],
+                    "zoom": [
+                      "none"
+                    ],
+                    "wheelAction": [
+                      "none"
+                    ],
+                    "wheelbaseline": [
+                      0
+                    ],
+                    "fullOut": [
+                      "both"
+                    ],
+                    "legend": [
+                      null
+                    ],
+                    "legendOptions": [
+                      [
+                        "isSerieHideable",
+                        "isSerieSelectable"
+                      ]
+                    ],
+                    "mouseTracking": [
+                      []
+                    ],
+                    "selectScatter": [
+                      []
+                    ],
+                    "independantYZoom": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "axis": [
+            {
+              "sections": {},
+              "groups": {
+                "xAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      ""
+                    ],
+                    "max": [
+                      ""
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "axismodification": [
+                      "none"
+                    ]
+                  }
+                ],
+                "yAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display",
+                        "main"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      "0"
+                    ],
+                    "min": [
+                      ""
+                    ],
+                    "max": [
+                      ""
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "fitToAxisOnFromTo": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "variables": [
+            {
+              "sections": {},
+              "groups": {
+                "variables": [
+                  [
+                    {
+                      "variable": "temperature",
+                      "axis": "0",
+                      "adaptTo": "none",
+                      "plotcolor": [
+                        1,
+                        1,
+                        255,
+                        1
+                      ],
+                      "strokewidth": "1",
+                      "strokestyle": "1",
+                      "plotcontinuous": "continuous",
+                      "peakpicking": [],
+                      "markers": [],
+                      "markerShape": "1",
+                      "markerSize": 2,
+                      "normalize": "none",
+                      "optimizeSlots": [],
+                      "degrade": 0,
+                      "monotoneous": [],
+                      "tracking": []
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {}
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 1,
+            "top": 78
+          },
+          "size": {
+            "width": 43,
+            "height": 27
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Plot temperature over time",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Plot temperature over time",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 66,
+      "vars_in": [
+        {
+          "rel": "xArray",
+          "name": "temperature"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "title": "Plot temperature over time",
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/server_interaction/webservice_search/",
+      "configuration": {
+        "sections": {
+          "postvariables": [
+            {
+              "sections": {},
+              "groups": {
+                "postvariables": [
+                  [
+                    {
+                      "destination": "data",
+                      "filter": "none"
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {
+          "group": [
+            {
+              "url": [
+                "https://octanis-ground-station-jajoe.c9users.io/rockblock_packets/raw_pressure_data"
+              ],
+              "method": [
+                "GET"
+              ],
+              "dataType": [
+                "json"
+              ],
+              "withCredentials": [
+                []
+              ],
+              "showStatus": [
+                [
+                  "display"
+                ]
+              ],
+              "button": [
+                [
+                  "button"
+                ]
+              ],
+              "buttonlabel": [
+                "Refresh"
+              ],
+              "buttonlabel_exec": [
+                "Refreshing"
+              ],
+              "onloadsearch": [
+                [
+                  "button"
+                ]
+              ],
+              "debounce": [
+                0
+              ],
+              "resultfilter": [
+                "var lines=data.split(\"\\n\");\nvar resultat=new Array();\nfor(i=0;i<lines.length;i++){\n    if(lines[i] != \"\"){\n        var line=lines[i];\n        line = JSON.parse(line)\n        resultat.push(line.temperature);   \n    }\n}\nreturn resultat;"
+              ],
+              "askConfirm": [
+                []
+              ],
+              "confirmText": [
+                "Are you sure?"
+              ]
+            }
+          ],
+          "headers": [
+            [
+              {
+                "name": "J"
+              }
+            ]
+          ],
+          "searchparams": [
+            [
+              {
+                "destination": "url",
+                "fieldtype": "text"
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 11,
+            "top": 69
+          },
+          "size": {
+            "width": 21,
+            "height": 8
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the temperature data",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the temperature data",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 67,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {
+          "rel": "buttonColor",
+          "name": "click"
+        }
+      ],
+      "title": "Get the temperature data",
+      "vars_out": [
+        {
+          "event": "onSearchReturn",
+          "rel": "results",
+          "jpath": [],
+          "name": "temperature"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/science/spectra/spectra_displayer/",
+      "configuration": {
+        "sections": {
+          "graph": [
+            {
+              "sections": {},
+              "groups": {
+                "graph": [
+                  {
+                    "url": [
+                      ""
+                    ],
+                    "zoom": [
+                      "none"
+                    ],
+                    "wheelAction": [
+                      "none"
+                    ],
+                    "wheelbaseline": [
+                      0
+                    ],
+                    "fullOut": [
+                      "both"
+                    ],
+                    "legend": [
+                      null
+                    ],
+                    "legendOptions": [
+                      [
+                        "isSerieHideable",
+                        "isSerieSelectable"
+                      ]
+                    ],
+                    "mouseTracking": [
+                      []
+                    ],
+                    "selectScatter": [
+                      []
+                    ],
+                    "independantYZoom": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "axis": [
+            {
+              "sections": {},
+              "groups": {
+                "xAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      ""
+                    ],
+                    "max": [
+                      ""
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "axismodification": [
+                      "none"
+                    ]
+                  }
+                ],
+                "yAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display",
+                        "main"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      ""
+                    ],
+                    "max": [
+                      ""
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "fitToAxisOnFromTo": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "variables": [
+            {
+              "sections": {},
+              "groups": {
+                "variables": [
+                  [
+                    {
+                      "variable": "temperature",
+                      "axis": "0",
+                      "adaptTo": "none",
+                      "plotcolor": [
+                        1,
+                        1,
+                        255,
+                        1
+                      ],
+                      "strokewidth": "1",
+                      "strokestyle": "1",
+                      "plotcontinuous": "continuous",
+                      "peakpicking": [],
+                      "markers": [],
+                      "markerShape": "1",
+                      "markerSize": 2,
+                      "normalize": "none",
+                      "optimizeSlots": [],
+                      "degrade": 0,
+                      "monotoneous": [],
+                      "tracking": []
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {}
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 46,
+            "top": 78
+          },
+          "size": {
+            "width": 43,
+            "height": 27
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Plot pressure over time",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Plot pressure over time",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 68,
+      "vars_in": [
+        {
+          "rel": "xArray",
+          "name": "pressure"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "title": "Plot pressure over time",
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/server_interaction/webservice_search/",
+      "configuration": {
+        "sections": {
+          "postvariables": [
+            {
+              "sections": {},
+              "groups": {
+                "postvariables": [
+                  [
+                    {
+                      "destination": "data",
+                      "filter": "none"
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {
+          "group": [
+            {
+              "url": [
+                "https://octanis-ground-station-jajoe.c9users.io/rockblock_packets/raw_pressure_data"
+              ],
+              "method": [
+                "GET"
+              ],
+              "dataType": [
+                "json"
+              ],
+              "withCredentials": [
+                []
+              ],
+              "showStatus": [
+                [
+                  "display"
+                ]
+              ],
+              "button": [
+                [
+                  "button"
+                ]
+              ],
+              "buttonlabel": [
+                "Refresh"
+              ],
+              "buttonlabel_exec": [
+                "Refreshing"
+              ],
+              "onloadsearch": [
+                [
+                  "button"
+                ]
+              ],
+              "debounce": [
+                0
+              ],
+              "resultfilter": [
+                "var lines=data.split(\"\\n\");\nvar resultat=new Array();\nfor(i=0;i<lines.length;i++){\n    if(lines[i] != \"\"){\n        var line=lines[i];\n        line = JSON.parse(line)\n        resultat.push(line.press_abs);   \n    }\n}\nreturn resultat;"
+              ],
+              "askConfirm": [
+                []
+              ],
+              "confirmText": [
+                "Are you sure?"
+              ]
+            }
+          ],
+          "headers": [
+            [
+              {
+                "name": "J"
+              }
+            ]
+          ],
+          "searchparams": [
+            [
+              {
+                "destination": "url",
+                "fieldtype": "text"
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 58,
+            "top": 69
+          },
+          "size": {
+            "width": 20,
+            "height": 8
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the pressure data",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the pressure data",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 69,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {
+          "rel": "buttonColor",
+          "name": "click"
+        }
+      ],
+      "title": "Get the pressure data",
+      "vars_out": [
+        {
+          "event": "onSearchReturn",
+          "rel": "results",
+          "jpath": [],
+          "name": "pressure"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/server_interaction/webservice_search/",
+      "configuration": {
+        "sections": {
+          "postvariables": [
+            {
+              "sections": {},
+              "groups": {
+                "postvariables": [
+                  [
+                    {
+                      "destination": "data",
+                      "filter": "none"
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {
+          "group": [
+            {
+              "url": [
+                "https://octanis-ground-station-jajoe.c9users.io/rockblock_packets/sys_status_data"
+              ],
+              "method": [
+                "GET"
+              ],
+              "dataType": [
+                "json"
+              ],
+              "withCredentials": [
+                []
+              ],
+              "showStatus": [
+                [
+                  "display"
+                ]
+              ],
+              "button": [
+                [
+                  "button"
+                ]
+              ],
+              "buttonlabel": [
+                "Refresh"
+              ],
+              "buttonlabel_exec": [
+                "Refreshing"
+              ],
+              "onloadsearch": [
+                [
+                  "button"
+                ]
+              ],
+              "debounce": [
+                0
+              ],
+              "resultfilter": [
+                "var lines=data.split(\"\\n\");\nvar resultat=new Array();\nfor(i=0;i<lines.length;i++){\n    if(lines[i] != \"\"){\n        var line=lines[i];\n        line = JSON.parse(line)\n        resultat.push(line.battery_remaining);   \n    }\n}\nreturn resultat;"
+              ],
+              "askConfirm": [
+                []
+              ],
+              "confirmText": [
+                "Are you sure?"
+              ]
+            }
+          ],
+          "headers": [
+            [
+              {
+                "name": "J"
+              }
+            ]
+          ],
+          "searchparams": [
+            [
+              {
+                "destination": "url",
+                "fieldtype": "text"
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 102,
+            "top": 70
+          },
+          "size": {
+            "width": 20,
+            "height": 7
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the battery data",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the battery data",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 70,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {
+          "rel": "buttonColor",
+          "name": "click"
+        }
+      ],
+      "title": "Get the battery data",
+      "vars_out": [
+        {
+          "event": "onSearchReturn",
+          "rel": "results",
+          "jpath": [],
+          "name": "battery"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/science/spectra/spectra_displayer/",
+      "configuration": {
+        "sections": {
+          "graph": [
+            {
+              "sections": {},
+              "groups": {
+                "graph": [
+                  {
+                    "url": [
+                      ""
+                    ],
+                    "zoom": [
+                      "none"
+                    ],
+                    "wheelAction": [
+                      "none"
+                    ],
+                    "wheelbaseline": [
+                      0
+                    ],
+                    "fullOut": [
+                      "both"
+                    ],
+                    "legend": [
+                      null
+                    ],
+                    "legendOptions": [
+                      [
+                        "isSerieHideable",
+                        "isSerieSelectable"
+                      ]
+                    ],
+                    "mouseTracking": [
+                      []
+                    ],
+                    "selectScatter": [
+                      []
+                    ],
+                    "independantYZoom": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "axis": [
+            {
+              "sections": {},
+              "groups": {
+                "xAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      ""
+                    ],
+                    "max": [
+                      ""
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "axismodification": [
+                      "none"
+                    ]
+                  }
+                ],
+                "yAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display",
+                        "main"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      ""
+                    ],
+                    "max": [
+                      ""
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "fitToAxisOnFromTo": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "variables": [
+            {
+              "sections": {},
+              "groups": {
+                "variables": [
+                  [
+                    {
+                      "variable": "temperature",
+                      "axis": "0",
+                      "adaptTo": "none",
+                      "plotcolor": [
+                        1,
+                        1,
+                        255,
+                        1
+                      ],
+                      "strokewidth": "1",
+                      "strokestyle": "1",
+                      "plotcontinuous": "continuous",
+                      "peakpicking": [],
+                      "markers": [],
+                      "markerShape": "1",
+                      "markerSize": 2,
+                      "normalize": "none",
+                      "optimizeSlots": [],
+                      "degrade": 0,
+                      "monotoneous": [],
+                      "tracking": []
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {}
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 92,
+            "top": 78
+          },
+          "size": {
+            "width": 39,
+            "height": 27
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Plot battery (in %) over time",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Plot battery (in %) over time",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 71,
+      "vars_in": [
+        {
+          "rel": "xArray",
+          "name": "battery"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "title": "Plot battery (in %) over time",
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/server_interaction/webservice_search/",
+      "configuration": {
+        "sections": {
+          "postvariables": [
+            {
+              "sections": {},
+              "groups": {
+                "postvariables": [
+                  [
+                    {
+                      "destination": "data",
+                      "filter": "none"
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {
+          "group": [
+            {
+              "url": [
+                "https://octanis-ground-station-jajoe.c9users.io/rockblock_packets/sys_status_data"
+              ],
+              "method": [
+                "GET"
+              ],
+              "dataType": [
+                "json"
+              ],
+              "withCredentials": [
+                []
+              ],
+              "showStatus": [
+                [
+                  "display"
+                ]
+              ],
+              "button": [
+                [
+                  "button"
+                ]
+              ],
+              "buttonlabel": [
+                "Refresh"
+              ],
+              "buttonlabel_exec": [
+                "Refreshing"
+              ],
+              "onloadsearch": [
+                [
+                  "button"
+                ]
+              ],
+              "debounce": [
+                0
+              ],
+              "resultfilter": [
+                "var lines=data.split(\"\\n\");\nvar resultat=new Array();\nfor(i=0;i<lines.length;i++){\n    if(lines[i] != \"\"){\n        var line=lines[i];\n        line = JSON.parse(line)\n        resultat.push(line.current_battery/100);   \n    }\n}\nreturn resultat;"
+              ],
+              "askConfirm": [
+                []
+              ],
+              "confirmText": [
+                "Are you sure?"
+              ]
+            }
+          ],
+          "headers": [
+            [
+              {
+                "name": "J"
+              }
+            ]
+          ],
+          "searchparams": [
+            [
+              {
+                "destination": "url",
+                "fieldtype": "text"
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 19,
+            "top": 106
+          },
+          "size": {
+            "width": 22,
+            "height": 7
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the current of the battery",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the current of the battery",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 72,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {
+          "rel": "buttonColor",
+          "name": "click"
+        }
+      ],
+      "title": "Get the current of the battery",
+      "vars_out": [
+        {
+          "event": "onSearchReturn",
+          "rel": "results",
+          "jpath": [],
+          "name": "current"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/science/spectra/spectra_displayer/",
+      "configuration": {
+        "sections": {
+          "graph": [
+            {
+              "sections": {},
+              "groups": {
+                "graph": [
+                  {
+                    "url": [
+                      ""
+                    ],
+                    "zoom": [
+                      "none"
+                    ],
+                    "wheelAction": [
+                      "none"
+                    ],
+                    "wheelbaseline": [
+                      0
+                    ],
+                    "fullOut": [
+                      "both"
+                    ],
+                    "legend": [
+                      null
+                    ],
+                    "legendOptions": [
+                      [
+                        "isSerieHideable",
+                        "isSerieSelectable"
+                      ]
+                    ],
+                    "mouseTracking": [
+                      []
+                    ],
+                    "selectScatter": [
+                      []
+                    ],
+                    "independantYZoom": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "axis": [
+            {
+              "sections": {},
+              "groups": {
+                "xAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      ""
+                    ],
+                    "max": [
+                      ""
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "axismodification": [
+                      "none"
+                    ]
+                  }
+                ],
+                "yAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display",
+                        "main"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      ""
+                    ],
+                    "max": [
+                      ""
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "fitToAxisOnFromTo": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "variables": [
+            {
+              "sections": {},
+              "groups": {
+                "variables": [
+                  [
+                    {
+                      "variable": "temperature",
+                      "axis": "0",
+                      "adaptTo": "none",
+                      "plotcolor": [
+                        1,
+                        1,
+                        255,
+                        1
+                      ],
+                      "strokewidth": "1",
+                      "strokestyle": "1",
+                      "plotcontinuous": "continuous",
+                      "peakpicking": [],
+                      "markers": [],
+                      "markerShape": "1",
+                      "markerSize": 2,
+                      "normalize": "none",
+                      "optimizeSlots": [],
+                      "degrade": 0,
+                      "monotoneous": [],
+                      "tracking": []
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {}
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 82,
+            "top": 115
+          },
+          "size": {
+            "width": 44,
+            "height": 29
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Plot the voltage of the battery over time (in V)",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Plot the voltage of the battery over time (in V)",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 73,
+      "vars_in": [
+        {
+          "rel": "xArray",
+          "name": "voltage"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "title": "Plot the voltage of the battery over time (in V)",
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/science/spectra/spectra_displayer/",
+      "configuration": {
+        "sections": {
+          "graph": [
+            {
+              "sections": {},
+              "groups": {
+                "graph": [
+                  {
+                    "url": [
+                      ""
+                    ],
+                    "zoom": [
+                      "none"
+                    ],
+                    "wheelAction": [
+                      "none"
+                    ],
+                    "wheelbaseline": [
+                      0
+                    ],
+                    "fullOut": [
+                      "both"
+                    ],
+                    "legend": [
+                      null
+                    ],
+                    "legendOptions": [
+                      [
+                        "isSerieHideable",
+                        "isSerieSelectable"
+                      ]
+                    ],
+                    "mouseTracking": [
+                      []
+                    ],
+                    "selectScatter": [
+                      []
+                    ],
+                    "independantYZoom": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "axis": [
+            {
+              "sections": {},
+              "groups": {
+                "xAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      ""
+                    ],
+                    "max": [
+                      ""
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "axismodification": [
+                      "none"
+                    ]
+                  }
+                ],
+                "yAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display",
+                        "main"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      ""
+                    ],
+                    "max": [
+                      ""
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "fitToAxisOnFromTo": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "variables": [
+            {
+              "sections": {},
+              "groups": {
+                "variables": [
+                  [
+                    {
+                      "variable": "temperature",
+                      "axis": "0",
+                      "adaptTo": "none",
+                      "plotcolor": [
+                        1,
+                        1,
+                        255,
+                        1
+                      ],
+                      "strokewidth": "1",
+                      "strokestyle": "1",
+                      "plotcontinuous": "continuous",
+                      "peakpicking": [],
+                      "markers": [],
+                      "markerShape": "1",
+                      "markerSize": 2,
+                      "normalize": "none",
+                      "optimizeSlots": [],
+                      "degrade": 0,
+                      "monotoneous": [],
+                      "tracking": []
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {}
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 14,
+            "top": 115
+          },
+          "size": {
+            "width": 37,
+            "height": 31
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Plot the current of the battery over time (in A)",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Plot the current of the battery over time (in A)",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 74,
+      "vars_in": [
+        {
+          "rel": "xArray",
+          "name": "current"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "title": "Plot the current of the battery over time (in A)",
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/server_interaction/webservice_search/",
+      "configuration": {
+        "sections": {
+          "postvariables": [
+            {
+              "sections": {},
+              "groups": {
+                "postvariables": [
+                  [
+                    {
+                      "destination": "data",
+                      "filter": "none"
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {
+          "group": [
+            {
+              "url": [
+                "https://octanis-ground-station-jajoe.c9users.io/rockblock_packets/sys_status_data"
+              ],
+              "method": [
+                "GET"
+              ],
+              "dataType": [
+                "json"
+              ],
+              "withCredentials": [
+                []
+              ],
+              "showStatus": [
+                [
+                  "display"
+                ]
+              ],
+              "button": [
+                [
+                  "button"
+                ]
+              ],
+              "buttonlabel": [
+                "Refresh"
+              ],
+              "buttonlabel_exec": [
+                "Refreshing"
+              ],
+              "onloadsearch": [
+                [
+                  "button"
+                ]
+              ],
+              "debounce": [
+                0
+              ],
+              "resultfilter": [
+                "var lines=data.split(\"\\n\");\nvar resultat=new Array();\nfor(i=0;i<lines.length;i++){\n    if(lines[i] != \"\"){\n        var line=lines[i];\n        line = JSON.parse(line)\n        resultat.push(line.voltage_battery/1000);   \n    }\n}\nreturn resultat;"
+              ],
+              "askConfirm": [
+                []
+              ],
+              "confirmText": [
+                "Are you sure?"
+              ]
+            }
+          ],
+          "headers": [
+            [
+              {
+                "name": "J"
+              }
+            ]
+          ],
+          "searchparams": [
+            [
+              {
+                "destination": "url",
+                "fieldtype": "text"
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 93,
+            "top": 107
+          },
+          "size": {
+            "width": 23,
+            "height": 7
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the voltage of the battery",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the voltage of the battery",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 75,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {
+          "rel": "buttonColor",
+          "name": "click"
+        }
+      ],
+      "title": "Get the voltage of the battery",
+      "vars_out": [
+        {
+          "event": "onSearchReturn",
+          "rel": "results",
+          "jpath": [],
+          "name": "voltage"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/server_interaction/webservice_search/",
+      "configuration": {
+        "sections": {
+          "postvariables": [
+            {
+              "sections": {},
+              "groups": {
+                "postvariables": [
+                  [
+                    {
+                      "destination": "data",
+                      "filter": "none"
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {
+          "group": [
+            {
+              "url": [
+                "https://octanis-ground-station-jajoe.c9users.io/rockblock_packets/uv_data"
+              ],
+              "method": [
+                "GET"
+              ],
+              "dataType": [
+                "json"
+              ],
+              "withCredentials": [
+                []
+              ],
+              "showStatus": [
+                [
+                  "display"
+                ]
+              ],
+              "button": [
+                [
+                  "button"
+                ]
+              ],
+              "buttonlabel": [
+                "Refresh"
+              ],
+              "buttonlabel_exec": [
+                "Refreshing"
+              ],
+              "onloadsearch": [
+                [
+                  "button"
+                ]
+              ],
+              "debounce": [
+                0
+              ],
+              "resultfilter": [
+                "var lines=data.split(\"\\n\");\nvar resultat=new Array();\nfor(i=0;i<lines.length;i++){\n    if(lines[i] != \"\"){\n        var line=lines[i];\n        line = JSON.parse(line)\n        resultat.push(line.uv);   \n    }\n}\nreturn resultat;"
+              ],
+              "askConfirm": [
+                []
+              ],
+              "confirmText": [
+                "Are you sure?"
+              ]
+            }
+          ],
+          "headers": [
+            [
+              {
+                "name": "J"
+              }
+            ]
+          ],
+          "searchparams": [
+            [
+              {
+                "destination": "url",
+                "fieldtype": "text"
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 23,
+            "top": 147
+          },
+          "size": {
+            "width": 22,
+            "height": 7
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the UV data",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the UV data",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 76,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {
+          "rel": "buttonColor",
+          "name": "click"
+        }
+      ],
+      "title": "Get the UV data",
+      "vars_out": [
+        {
+          "event": "onSearchReturn",
+          "rel": "results",
+          "jpath": [],
+          "name": "uv"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/science/spectra/spectra_displayer/",
+      "configuration": {
+        "sections": {
+          "graph": [
+            {
+              "sections": {},
+              "groups": {
+                "graph": [
+                  {
+                    "url": [
+                      ""
+                    ],
+                    "zoom": [
+                      "none"
+                    ],
+                    "wheelAction": [
+                      "none"
+                    ],
+                    "wheelbaseline": [
+                      0
+                    ],
+                    "fullOut": [
+                      "both"
+                    ],
+                    "legend": [
+                      null
+                    ],
+                    "legendOptions": [
+                      [
+                        "isSerieHideable",
+                        "isSerieSelectable"
+                      ]
+                    ],
+                    "mouseTracking": [
+                      []
+                    ],
+                    "selectScatter": [
+                      []
+                    ],
+                    "independantYZoom": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "axis": [
+            {
+              "sections": {},
+              "groups": {
+                "xAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      ""
+                    ],
+                    "max": [
+                      ""
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "axismodification": [
+                      "none"
+                    ]
+                  }
+                ],
+                "yAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display",
+                        "main"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      ""
+                    ],
+                    "max": [
+                      ""
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "fitToAxisOnFromTo": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "variables": [
+            {
+              "sections": {},
+              "groups": {
+                "variables": [
+                  [
+                    {
+                      "variable": "temperature",
+                      "axis": "0",
+                      "adaptTo": "none",
+                      "plotcolor": [
+                        1,
+                        1,
+                        255,
+                        1
+                      ],
+                      "strokewidth": "1",
+                      "strokestyle": "1",
+                      "plotcontinuous": "continuous",
+                      "peakpicking": [],
+                      "markers": [],
+                      "markerShape": "1",
+                      "markerSize": 2,
+                      "normalize": "none",
+                      "optimizeSlots": [],
+                      "degrade": 0,
+                      "monotoneous": [],
+                      "tracking": []
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {}
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 16,
+            "top": 155
+          },
+          "size": {
+            "width": 37,
+            "height": 31
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Plot the UV over time",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Plot the UV over time",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 77,
+      "vars_in": [
+        {
+          "rel": "xArray",
+          "name": "uv"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "title": "Plot the UV over time",
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/server_interaction/webservice_search/",
+      "configuration": {
+        "sections": {
+          "postvariables": [
+            {
+              "sections": {},
+              "groups": {
+                "postvariables": [
+                  [
+                    {
+                      "destination": "data",
+                      "filter": "none"
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {
+          "group": [
+            {
+              "url": [
+                "https://octanis-ground-station-jajoe.c9users.io/rockblock_packets/geiger_data"
+              ],
+              "method": [
+                "GET"
+              ],
+              "dataType": [
+                "json"
+              ],
+              "withCredentials": [
+                []
+              ],
+              "showStatus": [
+                [
+                  "display"
+                ]
+              ],
+              "button": [
+                [
+                  "button"
+                ]
+              ],
+              "buttonlabel": [
+                "Refresh"
+              ],
+              "buttonlabel_exec": [
+                "Refreshing"
+              ],
+              "onloadsearch": [
+                [
+                  "button"
+                ]
+              ],
+              "debounce": [
+                0
+              ],
+              "resultfilter": [
+                "var lines=data.split(\"\\n\");\nvar resultat=new Array();\nfor(i=0;i<lines.length;i++){\n    if(lines[i] != \"\"){\n        var line=lines[i];\n        line = JSON.parse(line)\n        resultat.push(line.geiger_counter);   \n    }\n}\nreturn resultat;"
+              ],
+              "askConfirm": [
+                []
+              ],
+              "confirmText": [
+                "Are you sure?"
+              ]
+            }
+          ],
+          "headers": [
+            [
+              {
+                "name": "J"
+              }
+            ]
+          ],
+          "searchparams": [
+            [
+              {
+                "destination": "url",
+                "fieldtype": "text"
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 95,
+            "top": 145
+          },
+          "size": {
+            "width": 22,
+            "height": 7
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the radioactivity data",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the radioactivity data",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 78,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {
+          "rel": "buttonColor",
+          "name": "click"
+        }
+      ],
+      "title": "Get the radioactivity data",
+      "vars_out": [
+        {
+          "event": "onSearchReturn",
+          "rel": "results",
+          "jpath": [],
+          "name": "radioactivity"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "zindex": 2
+    },
+    {
+      "url": "modules/types/science/spectra/spectra_displayer/",
+      "configuration": {
+        "sections": {
+          "graph": [
+            {
+              "sections": {},
+              "groups": {
+                "graph": [
+                  {
+                    "url": [
+                      ""
+                    ],
+                    "zoom": [
+                      "none"
+                    ],
+                    "wheelAction": [
+                      "none"
+                    ],
+                    "wheelbaseline": [
+                      0
+                    ],
+                    "fullOut": [
+                      "both"
+                    ],
+                    "legend": [
+                      null
+                    ],
+                    "legendOptions": [
+                      [
+                        "isSerieHideable",
+                        "isSerieSelectable"
+                      ]
+                    ],
+                    "mouseTracking": [
+                      []
+                    ],
+                    "selectScatter": [
+                      []
+                    ],
+                    "independantYZoom": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "axis": [
+            {
+              "sections": {},
+              "groups": {
+                "xAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      ""
+                    ],
+                    "max": [
+                      ""
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "axismodification": [
+                      "none"
+                    ]
+                  }
+                ],
+                "yAxis": [
+                  {
+                    "checkboxes": [
+                      [
+                        "display",
+                        "main"
+                      ]
+                    ],
+                    "label": [
+                      ""
+                    ],
+                    "beforeSpacing": [
+                      "0"
+                    ],
+                    "afterSpacing": [
+                      0
+                    ],
+                    "min": [
+                      ""
+                    ],
+                    "max": [
+                      ""
+                    ],
+                    "nbTicksPrimary": [
+                      5
+                    ],
+                    "fitToAxisOnFromTo": [
+                      []
+                    ]
+                  }
+                ]
+              }
+            }
+          ],
+          "variables": [
+            {
+              "sections": {},
+              "groups": {
+                "variables": [
+                  [
+                    {
+                      "variable": "temperature",
+                      "axis": "0",
+                      "adaptTo": "none",
+                      "plotcolor": [
+                        1,
+                        1,
+                        255,
+                        1
+                      ],
+                      "strokewidth": "1",
+                      "strokestyle": "1",
+                      "plotcontinuous": "continuous",
+                      "peakpicking": [],
+                      "markers": [],
+                      "markerShape": "1",
+                      "markerSize": 2,
+                      "normalize": "none",
+                      "optimizeSlots": [],
+                      "degrade": 0,
+                      "monotoneous": [],
+                      "tracking": []
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {}
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 87,
+            "top": 153
+          },
+          "size": {
+            "width": 37,
+            "height": 31
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Plot the radioactivity over time",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Plot the radioactivity over time",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 79,
+      "vars_in": [
+        {
+          "rel": "xArray",
+          "name": "radioactivity"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "vars_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "title": "Plot the radioactivity over time",
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/client_interaction/button_action/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "toggle": [
+                "click"
+              ],
+              "label": [
+                "Refresh everything"
+              ],
+              "onLabel": [
+                "Toggle action off"
+              ],
+              "offLabel": [
+                "Toggle action on"
+              ],
+              "title": [
+                ""
+              ],
+              "onColor": [
+                [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              ],
+              "offColor": [
+                [
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              ],
+              "startState": [
+                "off"
+              ],
+              "text": [
+                null
+              ],
+              "askConfirm": [
+                []
+              ],
+              "confirmText": [
+                "Are you sure?"
+              ],
+              "okLabel": [
+                "Ok"
+              ],
+              "cancelLabel": [
+                "Cancel"
+              ],
+              "content": [
+                ""
+              ],
+              "contentType": [
+                "content"
+              ],
+              "maskOpacity": [
+                0.6
+              ]
+            }
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 52,
+            "top": 0
+          },
+          "size": {
+            "width": 19,
+            "height": 6
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Refresh everything",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Refresh everything",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 80,
+      "vars_in": [],
+      "actions_in": [
+        {
+          "rel": "_editPreferences"
+        }
+      ],
+      "title": "Refresh everything",
+      "vars_out": [],
+      "actions_out": [
+        {
+          "event": "onClick",
+          "jpath": [],
+          "name": "click"
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/client_interaction/xyzoomnavigator/",
+      "configuration": {},
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 48,
+            "top": 18
+          },
+          "size": {
+            "width": 27,
+            "height": 19
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 81
+    },
+    {
+      "url": "modules/types/edition/dualview/",
+      "configuration": {},
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 78,
+            "top": 26
+          },
+          "size": {
+            "width": 15,
+            "height": 11
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 82
+    },
+    {
+      "url": "modules/types/chart/basic/scatter3D/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "tooltip": [
+                []
+              ],
+              "tooltipJpath": [
+                null
+              ],
+              "displayPointCoordinates": [
+                [
+                  "onhover"
+                ]
+              ],
+              "grid": [
+                []
+              ],
+              "secondaryGrids": [
+                "0"
+              ],
+              "gridOriginX": [
+                "0"
+              ],
+              "gridOriginY": [
+                "0"
+              ],
+              "gridOriginZ": [
+                "0"
+              ],
+              "projection": [
+                []
+              ],
+              "ticks": [
+                []
+              ],
+              "labels": [
+                null
+              ],
+              "xLabel": [
+                null
+              ],
+              "yLabel": [
+                null
+              ],
+              "zLabel": [
+                null
+              ],
+              "minX": [
+                "-40"
+              ],
+              "maxX": [
+                "40"
+              ],
+              "minY": [
+                "-30"
+              ],
+              "maxY": [
+                "30"
+              ],
+              "minZ": [
+                "-30"
+              ],
+              "maxZ": [
+                "30"
+              ],
+              "backgroundColor": [
+                [
+                  230,
+                  230,
+                  230,
+                  1
+                ]
+              ],
+              "defaultPointColor": [
+                [
+                  50,
+                  50,
+                  50,
+                  1
+                ]
+              ],
+              "annotationColor": [
+                [
+                  33,
+                  33,
+                  33,
+                  1
+                ]
+              ],
+              "sizeNormalization": [
+                0.02
+              ],
+              "3d": [
+                "none"
+              ]
+            }
+          ],
+          "dataJpaths": [
+            [
+              {
+                "x": [
+                  "x"
+                ],
+                "y": [
+                  "z"
+                ],
+                "z": [
+                  "y"
+                ],
+                "color": [
+                  "color"
+                ],
+                "size": [],
+                "shape": [],
+                "highlight": []
+              }
+            ]
+          ],
+          "colorBar": [
+            [
+              {
+                "color": [
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "stopPosition": 0
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 38,
+            "top": 7
+          },
+          "size": {
+            "width": 67,
+            "height": 53
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 83,
+      "vars_in": [
+        {
+          "rel": "data3D",
+          "name": "rover_transformed"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "title": "",
+      "vars_out": [
+        {
+          "event": "onHover",
+          "rel": "info",
+          "jpath": []
+        }
+      ],
+      "actions_out": [],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences",
+                "Show fullscreen"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                [
+                  "yes"
+                ]
+              ],
+              "script": [
+                "function createCircle(x,z,yFixe,largeur){\n    var circle = new Array();\n    for(angle=0.0;angle<6.28;angle+=0.1){\n        //var a = createLine(x,z,x+largeur*Math.cos(angle),z+largeur*Math.sin(angle),0.2,yFixe)\n        //circle = circle.concat(a);\n        for(i=0;i<largeur;i+=0.3){\n          circle.push({\"x\":x+i*Math.cos(angle),\"y\":yFixe,\"z\":z+i*Math.sin(angle),\"color\":\"yellow\"});    \n        }\n        \n        \n    }\n    return circle;\n}\n\nfunction createRover(origineX, origineY, origineZ,largeur,profondeur,hauteur){\n   var rover=new Array();\n   // the back side\n   for(x=0;x<largeur;x++){\n      for(z=0;z<hauteur;z++){\n         rover.push({\"x\":origineX+x,\"y\":origineY+0,\"z\":origineZ+z,\"color\":\"orange\"})\n      }\n   }\n   // the front side\n   for(x=0;x<largeur;x++){\n      for(z=0;z<hauteur;z++){\n         rover.push({\"x\":origineX+x,\"y\":origineY+profondeur,\"z\":origineZ+z,\"color\":\"orange\"})\n      }\n   }\n\n   // the bottom\n   for(x=0;x<largeur;x++){\n      for(y=0;y<profondeur;y++){\n         rover.push({\"x\":origineX+x,\"y\":origineY+y,\"z\":origineZ+0,\"color\":\"orange\"})\n      }\n   }\n\n   // the top\n   for(x=0;x<largeur;x++){\n      for(y=0;y<profondeur;y++){\n         rover.push({\"x\":origineX+x,\"y\":origineY+y,\"z\":origineZ+hauteur,\"color\":\"orange\"})\n      }\n   }\n\n   // the left side\n   for(y=0;y<profondeur;y++){\n      for(z=0;z<hauteur;z++){\n         rover.push({\"x\":origineX+0,\"y\":origineY+y,\"z\":origineZ+z,\"color\":\"orange\"})\n      }\n   }\n\n   // the right side\n   for(y=0;y<profondeur;y++){\n      for(z=0;z<hauteur;z++){\n         rover.push({\"x\":origineX+largeur,\"y\":origineY+y,\"z\":origineZ+z,\"color\":\"orange\"})\n      }\n   }\n   \n   z_tmp = origineZ+hauteur/2;\n   // the axes\n   for(x=largeur/2;x<largeur;x++){\n       rover.push({\"x\":origineX+x-1,\"y\":origineY-2,\"z\":z_tmp-x+largeur/2,\"color\":\"grey\"});\n      rover.push({\"x\":origineX+x,\"y\":origineY-2,\"z\":z_tmp-x+largeur/2,\"color\":\"grey\"});\n      rover.push({\"x\":origineX+x+1,\"y\":origineY-2,\"z\":z_tmp-x+largeur/2,\"color\":\"grey\"});\n      \n      rover.push({\"x\":origineX+x-1,\"y\":origineY+profondeur+2,\"z\":z_tmp-x+largeur/2,\"color\":\"grey\"})\n      rover.push({\"x\":origineX+x,\"y\":origineY+profondeur+2,\"z\":z_tmp-x+largeur/2,\"color\":\"grey\"})\n      rover.push({\"x\":origineX+x+1,\"y\":origineY+profondeur+2,\"z\":z_tmp-x+largeur/2,\"color\":\"grey\"})\n   }\n   for(x=largeur/2;x>0;x--){\n       rover.push({\"x\":origineX+x-1,\"y\":origineY-2,\"z\":z_tmp+x-largeur/2,\"color\":\"grey\"});\n       rover.push({\"x\":origineX+x,\"y\":origineY-2,\"z\":z_tmp+x-largeur/2,\"color\":\"grey\"});\n       rover.push({\"x\":origineX+x+1,\"y\":origineY-2,\"z\":z_tmp+x-largeur/2,\"color\":\"grey\"});\n       \n       rover.push({\"x\":origineX+x-1,\"y\":origineY+profondeur+2,\"z\":z_tmp+x-largeur/2,\"color\":\"grey\"})\n       rover.push({\"x\":origineX+x,\"y\":origineY+profondeur+2,\"z\":z_tmp+x-largeur/2,\"color\":\"grey\"})\n       rover.push({\"x\":origineX+x+1,\"y\":origineY+profondeur+2,\"z\":z_tmp+x-largeur/2,\"color\":\"grey\"})\n   }\n\n   return rover;\n}\n\nfunction axes(origine,taille){\n    var repere = new Array();\n    // axe X\n    for(i=origine;i<taille;i++){\n        repere.push({\"x\":i,\"y\":origine,\"z\":origine,\"color\":\"red\"})\n    }\n    // axe Y\n    for(i=origine;i<taille;i++){\n        repere.push({\"x\":origine,\"y\":i,\"z\":origine,\"color\":\"green\"})\n    }\n    // axe Z\n    for(i=origine;i<taille;i++){\n        repere.push({\"x\":origine,\"y\":origine,\"z\":i,\"color\":\"blue\"})\n    }\n    return repere;\n}\n\nvar rover_attitude = createRover(-15,-10,-5,30,20,10);\nvar repere = axes(0,80);\nrover_attitude = rover_attitude.concat(repere);\nrover_attitude = rover_attitude.concat(createCircle(-14,-15,12,6));\nrover_attitude = rover_attitude.concat(createCircle(14,-15,12,6));\nrover_attitude = rover_attitude.concat(createCircle(-14,-15,-12,6));\nrover_attitude = rover_attitude.concat(createCircle(14,-15,-12,6));\nset('rover_attitude',rover_attitude);"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {}
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute"
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 37,
+            "height": 17
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "create Rover and axes",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "create Rover and axes",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 84,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {}
+      ],
+      "title": "create Rover and axes",
+      "vars_out": [
+        {
+          "event": "onScriptEnded",
+          "rel": "outputValue",
+          "jpath": [
+            "rover_attitude"
+          ],
+          "name": "rover_attitude"
+        }
+      ],
+      "actions_out": [],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/client_interaction/code_executor/",
+      "configuration": {
+        "sections": {},
+        "groups": {
+          "group": [
+            {
+              "display": [
+                [
+                  "editor",
+                  "buttons"
+                ]
+              ],
+              "execOnLoad": [
+                [
+                  "yes"
+                ]
+              ],
+              "script": [
+                "// yaw\nfunction rotationZ(x,y,z,angle,color){\n    var a = {\"x\":x*Math.cos(angle)-y*Math.sin(angle),\"y\":x*Math.sin(angle)+y*Math.cos(angle),\"z\":z,\"color\":color}\n    //var a = {\"x\":(x-35)*Math.cos(angle)-y*Math.sin(angle),\"y\":(x-35)*Math.sin(angle)+y*Math.cos(angle),\"z\":z,\"color\":color}\n    return a;\n}\n\n// pitch\nfunction rotationX(x, y, z, angle, color){\n    var a = {\"x\":x,\"y\":y*Math.cos(angle)-z*Math.sin(angle),\"z\":y*Math.sin(angle)+z*Math.cos(angle),\"color\":color};\n    return a;\n}\n\n// roll\nfunction rotationY(x,y,z,angle,color){\n    return {\"x\":z*Math.sin(angle)+x*Math.cos(angle),\"y\":y,\"z\":z*Math.cos(angle)-x*Math.sin(angle),\"color\":color}\n}\n\nvar attitude = get('attitude');\nvar angle=attitude[2];\n// var angle={\"roll\":0,\"pitch\":0,\"yaw\":0};\n\nvar rover_transformed = new Array();\nvar rover_reference =  get('rover_attitude');\nvar tmp;\nfor(i=0;i<rover_reference.length;i++){\n    tmp=rover_reference[i];\n    if(tmp.color!=\"red\" && tmp.color!=\"green\" && tmp.color != \"blue\"){\n       tmp= rotationX(tmp.x,tmp.y,tmp.z,angle.pitch,tmp.color);\n       tmp=rotationY(tmp.x,tmp.y,tmp.z,angle.roll,tmp.color);\n       tmp=rotationZ(tmp.x,tmp.y,tmp.z,angle.yaw,tmp.color);    \n    }\n    rover_transformed.push(tmp);\n}\nset('rover_transformed',rover_transformed);"
+              ]
+            }
+          ],
+          "libs": [
+            [
+              {}
+            ]
+          ],
+          "buttons": [
+            [
+              {
+                "name": "button1",
+                "label": "Execute"
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 1,
+            "top": 39
+          },
+          "size": {
+            "width": 35,
+            "height": 21
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Transformation of the Rover - Attitude",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": false,
+          "title": "Transformation of the Rover - Attitude",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 85,
+      "vars_in": [
+        {
+          "rel": "inputValue",
+          "name": "rover_attitude"
+        },
+        {
+          "rel": "inputValue",
+          "name": "attitude"
+        }
+      ],
+      "actions_in": [
+        {}
+      ],
+      "title": "Transformation of the Rover - Attitude",
+      "vars_out": [
+        {
+          "event": "onScriptEnded",
+          "rel": "outputValue",
+          "jpath": [
+            "rover_transformed"
+          ],
+          "name": "rover_transformed"
+        }
+      ],
+      "actions_out": [],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "url": "modules/types/server_interaction/webservice_search/",
+      "configuration": {
+        "sections": {
+          "postvariables": [
+            {
+              "sections": {},
+              "groups": {
+                "postvariables": [
+                  [
+                    {
+                      "destination": "data",
+                      "filter": "none"
+                    }
+                  ]
+                ]
+              }
+            }
+          ]
+        },
+        "groups": {
+          "group": [
+            {
+              "url": [
+                "https://octanis-ground-station-jajoe.c9users.io/rockblock_packets/attitude_data"
+              ],
+              "method": [
+                "GET"
+              ],
+              "dataType": [
+                "json"
+              ],
+              "withCredentials": [
+                []
+              ],
+              "showStatus": [
+                [
+                  "display"
+                ]
+              ],
+              "button": [
+                [
+                  "button"
+                ]
+              ],
+              "buttonlabel": [
+                "Refresh"
+              ],
+              "buttonlabel_exec": [
+                "Refreshing"
+              ],
+              "onloadsearch": [
+                [
+                  "button"
+                ]
+              ],
+              "debounce": [
+                0
+              ],
+              "resultfilter": [
+                "var lines=data.split(\"\\n\");\nvar resultat=new Array();\nfor(i=0;i<lines.length;i++){\n    if(lines[i] != \"\"){\n        var line=lines[i];\n        line = JSON.parse(line)\n        resultat.push({\"roll\": line.roll, \"pitch\": line.pitch, \"yaw\": line.yaw});   \n    }\n}\nreturn resultat;"
+              ],
+              "askConfirm": [
+                []
+              ],
+              "confirmText": [
+                "Are you sure?"
+              ]
+            }
+          ],
+          "headers": [
+            [
+              {
+                "name": "J"
+              }
+            ]
+          ],
+          "searchparams": [
+            [
+              {
+                "destination": "url",
+                "fieldtype": "text"
+              }
+            ]
+          ]
+        }
+      },
+      "layers": {
+        "Default layer": {
+          "position": {
+            "left": 10,
+            "top": 26
+          },
+          "size": {
+            "width": 21,
+            "height": 12
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the attitude data",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "Default layer"
+        },
+        "admin": {
+          "position": {
+            "left": 0,
+            "top": 0
+          },
+          "size": {
+            "width": 20,
+            "height": 20
+          },
+          "zIndex": 0,
+          "display": true,
+          "title": "Get the attitude data",
+          "bgColor": [
+            255,
+            255,
+            255,
+            0
+          ],
+          "wrapper": true,
+          "created": true,
+          "name": "admin"
+        }
+      },
+      "id": 86,
+      "vars_in": [
+        {}
+      ],
+      "actions_in": [
+        {
+          "rel": "buttonColor",
+          "name": "click"
+        }
+      ],
+      "title": "Get the attitude data",
+      "vars_out": [
+        {
+          "event": "onSearchReturn",
+          "rel": "results",
+          "jpath": [],
+          "name": "attitude"
+        }
+      ],
+      "actions_out": [
+        {
+          "jpath": []
+        }
+      ],
+      "toolbar": {
+        "custom": [
+          [
+            {
+              "title": "",
+              "icon": "",
+              "action": "",
+              "position": "begin"
+            }
+          ]
+        ],
+        "common": [
+          {
+            "toolbar": [
+              [
+                "Open Preferences"
+              ]
+            ]
+          }
+        ]
+      },
+      "css": [
+        {
+          "fontSize": [
+            ""
+          ],
+          "fontFamily": [
+            ""
+          ]
+        }
+      ],
+      "zindex": 2
+    }
+  ],
+  "variables": [
+    {
+      "varname": "highlight",
+      "jpath": [
+        "highlight"
+      ]
+    },
+    {
+      "varname": "pieChart",
+      "jpath": [
+        "pieChart"
+      ]
+    }
+  ],
+  "pouchvariables": [
+    {}
+  ],
+  "configuration": {
+    "title": "GPS, attitude, temperature, pressure, UV and radioactivity visualization"
+  },
+  "grid": {
+    "layers": {
+      "Default layer": {
+        "name": "Default layer"
+      },
+      "admin": {
+        "name": "admin"
+      }
+    },
+    "xWidth": 10,
+    "yHeight": 10
+  },
+  "actionscripts": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          {
+            "name": [
+              null
+            ],
+            "script": [
+              null
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "crons": {
+    "0": {}
+  },
+  "couch_replication": [
+    {
+      "sections": {},
+      "groups": {
+        "couch": [
+          [
+            {
+              "direction": "both",
+              "continuous": []
+            }
+          ]
+        ]
+      }
+    }
+  ],
+  "init_script": [
+    {
+      "sections": {},
+      "groups": {
+        "general": [
+          {
+            "script": [
+              ""
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "actionfiles": [
+    {
+      "sections": {},
+      "groups": {
+        "action": [
+          [
+            {}
+          ]
+        ]
+      }
+    }
+  ],
+  "aliases": [
+    {}
+  ],
+  "custom_filters": [
+    {
+      "sections": {
+        "modules": [
+          {
+            "sections": {},
+            "groups": {
+              "modules": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filtersLib": [
+          {
+            "sections": {},
+            "groups": {
+              "filters": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ],
+        "filters": [
+          {
+            "sections": {},
+            "groups": {
+              "filter": [
+                {
+                  "name": [
+                    null
+                  ],
+                  "script": [
+                    null
+                  ]
+                }
+              ],
+              "libs": [
+                [
+                  {}
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "groups": {}
+    }
+  ]
+}

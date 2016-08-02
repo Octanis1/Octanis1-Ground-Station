@@ -78,7 +78,7 @@
           "name": "admin"
         }
       },
-      "id": 29,
+      "id": 58,
       "vars_in": [
         {}
       ],
@@ -269,7 +269,7 @@
           ]
         }
       },
-      "id": 30,
+      "id": 59,
       "vars_in": [
         {
           "rel": "data3D",
@@ -495,7 +495,7 @@
           "name": "admin"
         }
       },
-      "id": 31,
+      "id": 60,
       "vars_in": [
         {}
       ],
@@ -601,7 +601,7 @@
           "name": "admin"
         }
       },
-      "id": 32,
+      "id": 61,
       "zindex": 2
     },
     {
@@ -653,7 +653,7 @@
           "name": "admin"
         }
       },
-      "id": 33
+      "id": 62
     },
     {
       "url": "modules/types/edition/dualview/",
@@ -704,7 +704,7 @@
           "name": "admin"
         }
       },
-      "id": 34
+      "id": 63
     },
     {
       "url": "modules/types/chart/basic/scatter3D/",
@@ -902,7 +902,7 @@
           "name": "admin"
         }
       },
-      "id": 35,
+      "id": 64,
       "vars_in": [
         {
           "rel": "data3D",
@@ -1038,7 +1038,7 @@
           "name": "admin"
         }
       },
-      "id": 36,
+      "id": 65,
       "vars_in": [
         {
           "rel": "value",
@@ -1326,7 +1326,7 @@
           "name": "admin"
         }
       },
-      "id": 37,
+      "id": 66,
       "vars_in": [
         {
           "rel": "xArray",
@@ -1512,7 +1512,7 @@
           "name": "admin"
         }
       },
-      "id": 38,
+      "id": 67,
       "vars_in": [
         {}
       ],
@@ -1768,7 +1768,7 @@
           "name": "admin"
         }
       },
-      "id": 39,
+      "id": 68,
       "vars_in": [
         {
           "rel": "xArray",
@@ -1954,7 +1954,7 @@
           "name": "admin"
         }
       },
-      "id": 40,
+      "id": 69,
       "vars_in": [
         {}
       ],
@@ -2144,7 +2144,7 @@
           "name": "admin"
         }
       },
-      "id": 41,
+      "id": 70,
       "vars_in": [
         {}
       ],
@@ -2400,7 +2400,7 @@
           "name": "admin"
         }
       },
-      "id": 42,
+      "id": 71,
       "vars_in": [
         {
           "rel": "xArray",
@@ -2586,7 +2586,7 @@
           "name": "admin"
         }
       },
-      "id": 43,
+      "id": 72,
       "vars_in": [
         {}
       ],
@@ -2842,7 +2842,7 @@
           "name": "admin"
         }
       },
-      "id": 44,
+      "id": 73,
       "vars_in": [
         {
           "rel": "xArray",
@@ -3094,7 +3094,7 @@
           "name": "admin"
         }
       },
-      "id": 45,
+      "id": 74,
       "vars_in": [
         {
           "rel": "xArray",
@@ -3280,7 +3280,7 @@
           "name": "admin"
         }
       },
-      "id": 46,
+      "id": 75,
       "vars_in": [
         {}
       ],
@@ -3470,7 +3470,7 @@
           "name": "admin"
         }
       },
-      "id": 47,
+      "id": 76,
       "vars_in": [
         {}
       ],
@@ -3726,7 +3726,7 @@
           "name": "admin"
         }
       },
-      "id": 48,
+      "id": 77,
       "vars_in": [
         {
           "rel": "xArray",
@@ -3912,7 +3912,7 @@
           "name": "admin"
         }
       },
-      "id": 49,
+      "id": 78,
       "vars_in": [
         {}
       ],
@@ -4168,7 +4168,7 @@
           "name": "admin"
         }
       },
-      "id": 50,
+      "id": 79,
       "vars_in": [
         {
           "rel": "xArray",
@@ -4336,7 +4336,7 @@
           "name": "admin"
         }
       },
-      "id": 51,
+      "id": 80,
       "vars_in": [],
       "actions_in": [
         {
@@ -4433,7 +4433,7 @@
           "name": "admin"
         }
       },
-      "id": 52
+      "id": 81
     },
     {
       "url": "modules/types/edition/dualview/",
@@ -4484,7 +4484,7 @@
           "name": "admin"
         }
       },
-      "id": 53
+      "id": 82
     },
     {
       "url": "modules/types/chart/basic/scatter3D/",
@@ -4669,7 +4669,7 @@
           "name": "admin"
         }
       },
-      "id": 54,
+      "id": 83,
       "vars_in": [
         {
           "rel": "data3D",
@@ -4805,7 +4805,7 @@
           "name": "admin"
         }
       },
-      "id": 55,
+      "id": 84,
       "vars_in": [
         {}
       ],
@@ -4875,7 +4875,7 @@
                 ]
               ],
               "script": [
-                "// yaw\nfunction rotationZ(x,y,z,angle,color){\n    var a = {\"x\":x*Math.cos(angle)-y*Math.sin(angle),\"y\":x*Math.sin(angle)+y*Math.cos(angle),\"z\":z,\"color\":color}\n    return a;\n}\n\n// pitch\nfunction rotationX(x, y, z, angle, color){\n    var a = {\"x\":x,\"y\":y*Math.cos(angle)-z*Math.sin(angle),\"z\":y*Math.sin(angle)+z*Math.cos(angle),\"color\":color};\n    return a;\n}\n\n// roll\nfunction rotationY(x,y,z,angle,color){\n    return {\"x\":z*Math.sin(angle)+x*Math.cos(angle),\"y\":y,\"z\":z*Math.cos(angle)-x*Math.sin(angle),\"color\":color}\n}\n\nvar angle={\"roll\":0,\"pitch\":0,\"yaw\":0};\n\nvar rover_transformed = new Array();\nvar rover_reference =  get('rover_attitude');\nvar tmp;\nfor(i=0;i<rover_reference.length;i++){\n    tmp=rover_reference[i];\n    if(tmp.color!=\"red\" && tmp.color!=\"green\" && tmp.color != \"blue\"){\n       tmp= rotationX(tmp.x,tmp.y,tmp.z,angle.pitch,tmp.color);\n       tmp=rotationY(tmp.x,tmp.y,tmp.z,angle.roll,tmp.color);\n       tmp=rotationZ(tmp.x,tmp.y,tmp.z,angle.yaw,tmp.color);    \n    }\n    rover_transformed.push(tmp);\n}\nset('rover_transformed',rover_transformed);"
+                "// yaw\nfunction rotationZ(x,y,z,angle,color){\n    var a = {\"x\":x*Math.cos(angle)-y*Math.sin(angle),\"y\":x*Math.sin(angle)+y*Math.cos(angle),\"z\":z,\"color\":color}\n    return a;\n}\n\n// pitch\nfunction rotationX(x, y, z, angle, color){\n    var a = {\"x\":x,\"y\":y*Math.cos(angle)-z*Math.sin(angle),\"z\":y*Math.sin(angle)+z*Math.cos(angle),\"color\":color};\n    return a;\n}\n\n// roll\nfunction rotationY(x,y,z,angle,color){\n    return {\"x\":z*Math.sin(angle)+x*Math.cos(angle),\"y\":y,\"z\":z*Math.cos(angle)-x*Math.sin(angle),\"color\":color}\n}\n\nvar attitude = get('attitude');\nvar angle=attitude[2];\n// var angle={\"roll\":0,\"pitch\":0,\"yaw\":0};\n\nvar rover_transformed = new Array();\nvar rover_reference =  get('rover_attitude');\nvar tmp;\nfor(i=0;i<rover_reference.length;i++){\n    tmp=rover_reference[i];\n    if(tmp.color!=\"red\" && tmp.color!=\"green\" && tmp.color != \"blue\"){\n       tmp= rotationX(tmp.x,tmp.y,tmp.z,angle.pitch,tmp.color);\n       tmp=rotationY(tmp.x,tmp.y,tmp.z,angle.roll,tmp.color);\n       tmp=rotationZ(tmp.x,tmp.y,tmp.z,angle.yaw,tmp.color);    \n    }\n    rover_transformed.push(tmp);\n}\nset('rover_transformed',rover_transformed);"
               ]
             }
           ],
@@ -4902,7 +4902,7 @@
           },
           "size": {
             "width": 35,
-            "height": 16
+            "height": 21
           },
           "zIndex": 0,
           "display": true,
@@ -4940,11 +4940,15 @@
           "name": "admin"
         }
       },
-      "id": 56,
+      "id": 85,
       "vars_in": [
         {
           "rel": "inputValue",
           "name": "rover_attitude"
+        },
+        {
+          "rel": "inputValue",
+          "name": "attitude"
         }
       ],
       "actions_in": [
@@ -5127,7 +5131,7 @@
           "name": "admin"
         }
       },
-      "id": 57,
+      "id": 86,
       "vars_in": [
         {}
       ],
