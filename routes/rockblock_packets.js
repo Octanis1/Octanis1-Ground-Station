@@ -367,4 +367,16 @@ router.get('/'+ process.env.GATEWAY_KEY, function(req, res, next) {
 
 });
 
+router.get('/iterator/initialise/'+ process.env.GATEWAY_KEY, function(req, res, next) {
+  res.send('0');
+});
+
+router.get('/iterator/increment/:nb'+ process.env.GATEWAY_KEY, function(req, res, next) {
+  res.send(String(parseInt(req.params.nb)+1))
+});
+
+router.get('/iterator/decrement/:nb'+ process.env.GATEWAY_KEY, function(req, res, next) {
+  res.send(String(parseInt(req.params.nb)-1))
+});
+
 module.exports = router;
